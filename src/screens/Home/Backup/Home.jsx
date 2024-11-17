@@ -1,12 +1,9 @@
 import React from "react";
-import "./Style.css";
-import Header from "../../components/Header/Header.jsx";
+import "./style.css";
+//import { Header } from "../../components/Header.jsx";
 
 export const Home = () => {
     return (
-        <>
-        <Header />
-
         <div className="home">
             <div className="div">
                 <div className="overlap">
@@ -597,6 +594,5 @@ export const Home = () => {
                 <div className="text-wrapper-40">Product name #3</div>
             </div>
         </div>
-        </>
     );
 };
