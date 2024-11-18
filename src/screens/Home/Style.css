@@ -28,6 +28,12 @@
     width: 222px;
 }
 
+.home .logo-image {
+    height: 110px;
+    position: absolute;
+    transform: translateY(-15px);
+}
+
 .home .text-wrapper {
     color: #ffffff;
     font-family: "Open Sans", Helvetica;
@@ -110,7 +116,6 @@
     line-height: normal;
     position: absolute;
     top: 254px;
-    width: 392px;
 }
 
 .home .p {

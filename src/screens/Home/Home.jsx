@@ -1,22 +1,18 @@
 import React from "react";
 import "./Style.css";
-import Header from "../../components/Header/Header.jsx";
 
 export const Home = () => {
-    return (
-        <>
-        <Header />
-
+    return (<>
         <div className="home">
             <div className="div">
                 <div className="overlap">
-                    <div className="text-wrapper">L</div>
+                    <img src="../../../public/logo/banner/transparent-white.png" alt="Logo" className="logo-image"/>
                 </div>
 
                 <div className="overlap-group">
-                    <div className="rectangle" />
+                    <div className="rectangle"/>
 
-                    <div className="rectangle-2" />
+                    <div className="rectangle-2"/>
 
                     <img
                         className="img"
@@ -42,13 +38,10 @@ export const Home = () => {
                         src="https://c.animaapp.com/nN7lsptt/img/vector-3.svg"
                     />
 
-                    <div className="text-wrapper-2">Featured Title</div>
+                    <div className="text-wrapper-2">Redefining Hacking</div>
 
                     <p className="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                        sit venenatis aliquet nunc nam scelerisque. Proin congue viverra
-                        risus placerat augue odio cras neque. Felis netus tincidunt sed hac
-                        urna.
+                        Our mission is to redefine hacking and make it more accessible to the public. We want to teach people the art of hacking and how to protect themselves from it. We believe that the best way to learn is by doing, so we provide a hands-on experience to our users.
                     </p>
 
                     <div className="group">
@@ -63,7 +56,7 @@ export const Home = () => {
 
                     <div className="frame-2">
                         <div className="frame-3">
-                            <div className="text-wrapper-3">PRODUCTS</div>
+                            <div className="text-wrapper-3">SOLUTIONS</div>
 
                             <img
                                 className="frame-4"
@@ -73,7 +66,7 @@ export const Home = () => {
                         </div>
 
                         <div className="frame-5">
-                            <div className="text-wrapper-3">LABELS</div>
+                            <div className="text-wrapper-3">LEARN</div>
 
                             <img
                                 className="frame-4"
@@ -93,7 +86,7 @@ export const Home = () => {
                         </div>
 
                         <div className="frame-5">
-                            <div className="text-wrapper-3">OUR COMPANIES</div>
+                            <div className="text-wrapper-3">SUPPORT</div>
 
                             <img
                                 className="frame-4"
@@ -163,14 +156,14 @@ export const Home = () => {
                         tincidunt et turpis habitasse ultrices condimentum velit. At nulla
                         eu urna cras sed odio mauris vivamus erat. Elit mi massa nisl enim.
                         Tristique massa sit est in senectus amet, ut nullam. Amet
-                        consectetur netus duis diam. <br />
-                        <br />
+                        consectetur netus duis diam. <br/>
+                        <br/>
                         Consectetur pellentesque non eget nisl, pretium, ultrices. Tortor
                         dignissim pretium aliquet nunc, pulvinar. Faucibus tincidunt odio
                         tincidunt massa lobortis aliquam venenatis neque. Tortor porttitor
                         parturient sagittis non faucibus faucibus tincidunt ut aliquam.{" "}
-                        <br />
-                        <br />
+                        <br/>
+                        <br/>
                         Egestas sed massa enim tempor at orci dignissim id. Sed metus mi leo
                         rutrum felis.
                     </p>
@@ -255,7 +248,7 @@ export const Home = () => {
                         />
                     </div>
 
-                    <div className="rectangle-3" />
+                    <div className="rectangle-3"/>
                 </div>
 
                 <div className="overlap-4">
@@ -267,7 +260,7 @@ export const Home = () => {
                         />
                     </div>
 
-                    <div className="rectangle-3" />
+                    <div className="rectangle-3"/>
                 </div>
 
                 <img
@@ -282,11 +275,11 @@ export const Home = () => {
                     src="https://c.animaapp.com/nN7lsptt/img/rectangle-13.svg"
                 />
 
-                <div className="rectangle-5" />
+                <div className="rectangle-5"/>
 
-                <div className="rectangle-6" />
+                <div className="rectangle-6"/>
 
-                <div className="rectangle-7" />
+                <div className="rectangle-7"/>
 
                 <img
                     className="rectangle-8"
@@ -294,7 +287,7 @@ export const Home = () => {
                     src="https://c.animaapp.com/nN7lsptt/img/rectangle-17.svg"
                 />
 
-                <div className="rectangle-9" />
+                <div className="rectangle-9"/>
 
                 <img
                     className="rectangle-10"
@@ -302,7 +295,7 @@ export const Home = () => {
                     src="https://c.animaapp.com/nN7lsptt/img/rectangle-15.svg"
                 />
 
-                <div className="rectangle-11" />
+                <div className="rectangle-11"/>
 
                 <img
                     className="rectangle-12"
@@ -387,7 +380,7 @@ export const Home = () => {
                                     src="https://c.animaapp.com/nN7lsptt/img/subtract-1.svg"
                                 />
 
-                                <div className="ellipse" />
+                                <div className="ellipse"/>
 
                                 <img
                                     className="polygon"
@@ -412,7 +405,7 @@ export const Home = () => {
                         </div>
                     </div>
 
-                    <div className="rectangle-14" />
+                    <div className="rectangle-14"/>
 
                     <img
                         className="union-6"
@@ -514,9 +507,7 @@ export const Home = () => {
                 <div className="frame-24">
                     <div className="text-wrapper-21">LOGIN</div>
 
-                    <div className="text-wrapper-21">REGISTER</div>
-
-                    <div className="text-wrapper-21">LANGUAGE</div>
+                    <div className="text-wrapper-21">JOIN US</div>
                 </div>
 
                 <div className="frame-25">
@@ -526,15 +517,15 @@ export const Home = () => {
                         src="https://c.animaapp.com/nN7lsptt/img/frame-23.svg"
                     />
 
-                    <div className="rectangle-17" />
+                    <div className="rectangle-17"/>
 
-                    <div className="rectangle-18" />
+                    <div className="rectangle-18"/>
 
-                    <div className="rectangle-19" />
+                    <div className="rectangle-19"/>
 
-                    <div className="rectangle-20" />
+                    <div className="rectangle-20"/>
 
-                    <div className="rectangle-21" />
+                    <div className="rectangle-21"/>
 
                     <img
                         className="frame-27"
@@ -544,7 +535,7 @@ export const Home = () => {
                 </div>
 
                 <div className="frame-28">
-                    <div className="text-wrapper-22">SEARCH</div>
+                    <div className="text-wrapper-22">FIND</div>
 
                     <div className="frame-4">
                         <img
@@ -597,6 +588,5 @@ export const Home = () => {
                 <div className="text-wrapper-40">Product name #3</div>
             </div>
         </div>
-        </>
-    );
+    </>);
 };
