@@ -15,8 +15,7 @@
 }
 
 .home .overlap {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 79px;
     left: 189px;
     position: absolute;
@@ -26,7 +25,7 @@
 
 .home .text-wrapper {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 56px;
     font-weight: 700;
     left: 94px;
@@ -45,8 +44,7 @@
 }
 
 .home .rectangle {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 52px;
     left: 0;
     position: absolute;
@@ -55,8 +53,7 @@
 }
 
 .home .rectangle-2 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 420px;
     left: 0;
     position: absolute;
@@ -98,7 +95,7 @@
 
 .home .text-wrapper-2 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 56px;
     font-weight: 700;
     left: 236px;
@@ -111,7 +108,7 @@
 
 .home .p {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
@@ -159,8 +156,7 @@
 
 .home .frame-3 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: inline-flex;
     flex: 0 0 auto;
     gap: 10px;
@@ -175,7 +171,7 @@
 
 .home .text-wrapper-3 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0;
@@ -192,8 +188,7 @@
 
 .home .frame-5 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: inline-flex;
     flex: 0 0 auto;
     gap: 10px;
@@ -207,8 +202,7 @@
 
 .home .frame-6 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: inline-flex;
     flex: 0 0 auto;
     gap: 10px;
@@ -265,7 +259,7 @@
 
 .home .text-wrapper-4 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 700;
     left: 190px;
@@ -278,7 +272,7 @@
 
 .home .lorem-ipsum-dolor {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 12px;
     font-weight: 400;
     left: 190px;
@@ -291,8 +285,7 @@
 
 .home .div-wrapper {
     align-items: flex-start;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: flex;
     gap: 10px;
     left: 910px;
@@ -304,19 +297,19 @@
 
 .home .text-wrapper-5 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: normal;
     margin-top: -1.00px;
     position: relative;
-    width: 281.6px;
+    width: 282px;
 }
 
 .home .text-wrapper-6 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 700;
     left: 550px;
@@ -329,7 +322,7 @@
 
 .home .text-wrapper-7 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 700;
     left: 910px;
@@ -342,7 +335,7 @@
 
 .home .text-wrapper-8 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 700;
     left: 910px;
@@ -373,7 +366,7 @@
 
 .home .text-wrapper-9 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0;
@@ -385,7 +378,7 @@
 
 .home .text-wrapper-10 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0;
@@ -395,8 +388,7 @@
 }
 
 .home .frame-wrapper {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 119px;
     left: 909px;
     position: absolute;
@@ -437,8 +429,7 @@
 }
 
 .home .rectangle-3 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 119px;
     left: 0;
     position: absolute;
@@ -471,8 +462,7 @@
 }
 
 .home .rectangle-5 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 909px;
     position: absolute;
@@ -481,8 +471,7 @@
 }
 
 .home .rectangle-6 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 909px;
     position: absolute;
@@ -491,8 +480,7 @@
 }
 
 .home .rectangle-7 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 1029px;
     position: absolute;
@@ -509,8 +497,7 @@
 }
 
 .home .rectangle-9 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 1029px;
     position: absolute;
@@ -527,8 +514,7 @@
 }
 
 .home .rectangle-11 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 1149px;
     position: absolute;
@@ -564,7 +550,7 @@
 
 .home .text-wrapper-11 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-style: italic;
     font-weight: 400;
@@ -577,7 +563,7 @@
 
 .home .text-wrapper-12 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0;
@@ -588,7 +574,7 @@
 
 .home .text-wrapper-13 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 0;
@@ -598,8 +584,7 @@
 }
 
 .home .overlap-5 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 52px;
     left: 187px;
     position: absolute;
@@ -609,8 +594,7 @@
 
 .home .frame-14 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: inline-flex;
     gap: 10px;
     height: 52px;
@@ -623,8 +607,7 @@
 
 .home .frame-15 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: inline-flex;
     gap: 10px;
     height: 52px;
@@ -637,8 +620,7 @@
 
 .home .frame-16 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: flex;
     height: 52px;
     justify-content: space-between;
@@ -659,8 +641,7 @@
 
 .home .frame-17 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: flex;
     height: 52px;
     justify-content: space-between;
@@ -712,9 +693,8 @@
 }
 
 .home .ellipse {
-    border: 2px solid;
-    border-color: #ffffff;
-    border-radius: 3.25px;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
     height: 7px;
     left: 16px;
     position: absolute;
@@ -741,8 +721,7 @@
 
 .home .frame-18 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     display: flex;
     height: 52px;
     justify-content: space-between;
@@ -762,8 +741,7 @@
 }
 
 .home .rectangle-14 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 232px;
     left: 0;
     position: absolute;
@@ -808,7 +786,7 @@
 
 .home .text-wrapper-14 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-style: italic;
     font-weight: 400;
@@ -858,13 +836,13 @@
 
 .home .text-wrapper-15 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0;
     line-height: 44px;
     position: relative;
-    width: 338.26px;
+    width: 338px;
 }
 
 .home .frame-23 {
@@ -879,7 +857,7 @@
 
 .home .text-wrapper-16 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 400;
     left: 1086px;
@@ -892,7 +870,7 @@
 
 .home .text-wrapper-17 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 15px;
     font-weight: 400;
     left: 1089px;
@@ -905,7 +883,7 @@
 
 .home .text-wrapper-18 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 17px;
     font-weight: 700;
     left: 1086px;
@@ -918,7 +896,7 @@
 
 .home .text-wrapper-19 {
     color: #ffffff;
-    font-family: "Open Sans", Helvetica;
+    font-family: "Open Sans", Helvetica, serif;
     font-size: 17px;
     font-weight: 700;
     left: 1089px;
@@ -964,8 +942,7 @@
 }
 
 .home .frame-25 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 187px;
     position: absolute;
@@ -982,8 +959,7 @@
 }
 
 .home .rectangle-17 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 49px;
     position: absolute;
@@ -992,8 +968,7 @@
 }
 
 .home .rectangle-18 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 174px;
     position: absolute;
@@ -1002,8 +977,7 @@
 }
 
 .home .rectangle-19 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 299px;
     position: absolute;
@@ -1012,8 +986,7 @@
 }
 
 .home .rectangle-20 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 424px;
     position: absolute;
@@ -1022,8 +995,7 @@
 }
 
 .home .rectangle-21 {
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     height: 99px;
     left: 549px;
     position: absolute;
@@ -1041,8 +1013,7 @@
 
 .home .frame-28 {
     align-items: center;
-    border: 1px solid;
-    border-color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
