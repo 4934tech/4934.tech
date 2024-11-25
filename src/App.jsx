@@ -1,15 +1,10 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './pages/Home';
 
 const App = () => {
     return (
         <div>
-            <Header />
-            <main>
-                <h1>Welcome to Vite + React!</h1>
-            </main>
-            <Footer />
+            <Home />
         </div>
     );
 };

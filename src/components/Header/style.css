@@ -1,0 +1,206 @@
+.header {
+  align-items: center;
+  background-color: #000000;
+  display: flex;
+  gap: 10vw;
+  height: 4vh;
+  justify-content: center;
+  padding: 0.8vw;
+  position: relative;
+}
+
+.header .link {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 662px;
+}
+
+.header .logo {
+  background-image: url(../../public/header/transparent-white-banner-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 3rem;
+  position: relative;
+  width: 8rem;
+}
+
+.header .product {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 8.38px 0px 8.38px 16.76px;
+  position: relative;
+}
+
+.header .text-wrapper {
+  color: #dddddddd;
+  font-family: "Actor", Helvetica;
+  font-size: 15.6px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.header .expand-more {
+  height: 28.73px;
+  position: relative;
+  width: 28.73px;
+}
+
+.header .div-wrapper {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 11.97px;
+  justify-content: center;
+  padding: 8.38px;
+  position: relative;
+}
+
+.header .div {
+  color: #dddddddd;
+  font-family: "Actor", Helvetica;
+  font-size: 15.6px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.20px;
+  position: relative;
+  width: fit-content;
+}
+
+.header .div-2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 8.38px;
+  position: relative;
+}
+
+.header .pricing {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  margin-right: -1.76px;
+  padding: 8.38px;
+  position: relative;
+}
+
+.header .frame {
+  align-items: center;
+  display: flex;
+  gap: 13.17px;
+  justify-content: flex-end;
+  position: relative;
+  width: 453px;
+}
+
+.header .search-bar {
+  align-items: center;
+  background-color: #131313;
+  border: 0.24px solid;
+  border-color: #a2a2a2;
+  border-radius: 4.79px;
+  display: flex;
+  height: 0.8rem;
+  justify-content: flex-end;
+  padding: 1rem 1.4rem;
+  position: relative;
+  width: 294px;
+}
+
+.header .frame-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 7.18px;
+  margin-bottom: -4.97px;
+  margin-left: -6.16px;
+  margin-top: -4.97px;
+  position: relative;
+}
+
+.header .text-wrapper-2 {
+  -webkit-text-stroke: 1.2px #b3b5b70a;
+  color: #c0c3c9;
+  font-family: "Actor", Helvetica;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -1.20px;
+  margin-top: -2.39px;
+  position: relative;
+  width: 251px;
+}
+
+.header .code-icon {
+  border: 1.2px solid;
+  border-color: #515868;
+  border-radius: 3.59px;
+  height: 17.96px;
+  position: relative;
+  width: 16.84px;
+}
+
+.header .line {
+  height: 11px;
+  left: 2px;
+  position: absolute;
+  top: 3px;
+  width: 9px;
+}
+
+.header .text-wrapper-3 {
+  color: #dddddd;
+  font-family: "Actor", Helvetica;
+  font-size: 15.6px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.20px;
+  position: relative;
+  width: fit-content;
+}
+
+.header .overlap-group-wrapper {
+  height: 33.52px;
+  position: relative;
+  width: 70.63px;
+}
+
+.header .overlap-group {
+  border-radius: 7.18px;
+  height: 34px;
+  position: relative;
+  width: 71px;
+}
+
+.header .text-wrapper-4 {
+  color: #dddddd;
+  font-family: "Actor", Helvetica;
+  font-size: 0.9rem;
+  font-weight: 400;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 10px;
+}
+
+.header .rectangle {
+  border: 0.6px solid;
+  border-color: #dddddd;
+  border-radius: 7.18px;
+  height: 34px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 71px;
+}

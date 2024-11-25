@@ -1,0 +1,153 @@
+.emphasized-block {
+    height: 589px;
+    width: 1467px;
+}
+
+.emphasized-block .overlap {
+    height: 689px;
+    position: relative;
+    top: -10px;
+}
+
+.emphasized-block .rectangle {
+    background: radial-gradient(
+            50% 50% at 50% 50%,
+            rgb(50, 183, 182) 0%,
+            rgb(66, 83, 137) 100%
+    );
+    border-radius: 20px;
+    height: 513px;
+    left: 0;
+    position: absolute;
+    top: 48px;
+    width: 1467px;
+}
+
+.emphasized-block .group {
+    height: 204px;
+    left: 709px;
+    position: absolute;
+    top: 203px;
+    width: 566px;
+}
+
+.emphasized-block .want-to-contribute {
+    color: #ffffff;
+    font-family: "Akshar-Regular", Helvetica;
+    font-size: 50px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 515px;
+}
+
+.emphasized-block .text-wrapper {
+    color: #ffffff;
+    font-family: "Akshar-Regular", Helvetica;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.emphasized-block .span {
+    font-family: "Akshar-Bold", Helvetica;
+    font-weight: 700;
+}
+
+.emphasized-block .div {
+    height: 51px;
+    left: 0;
+    position: absolute;
+    top: 153px;
+    width: 564px;
+}
+
+.emphasized-block .overlap-group-wrapper {
+    height: 51px;
+    left: 413px;
+    position: absolute;
+    top: 0;
+    width: 153px;
+}
+
+.emphasized-block .overlap-group {
+    background-color: #000000;
+    border-radius: 50px;
+    height: 51px;
+    position: relative;
+    width: 151px;
+}
+
+.emphasized-block .hop-in {
+    color: #ffffff;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 19.4px;
+    font-weight: 400;
+    left: 26px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 14px;
+    width: 89px;
+}
+
+.emphasized-block .akar-icons-arrow {
+    height: 19px;
+    left: 114px;
+    position: absolute;
+    top: 16px;
+    width: 19px;
+}
+
+.emphasized-block .frame {
+    -webkit-backdrop-filter: blur(40px) brightness(100%);
+    align-items: flex-start;
+    backdrop-filter: blur(40px) brightness(100%);
+    background-color: #ffffff33;
+    border: 0.78px solid;
+    border-color: transparent;
+    border-image: linear-gradient(to bottom, rgb(50, 183, 182), rgb(66, 83, 137))
+    1;
+    border-radius: 23.3px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 50px;
+    left: 0;
+    padding: 10px 34px;
+    position: absolute;
+    top: 1px;
+    width: 399px;
+}
+
+.emphasized-block .sign-up-with-your-wrapper {
+    height: 24px;
+    margin-right: -13.00px;
+    position: relative;
+    width: 344px;
+}
+
+.emphasized-block .sign-up-with-your {
+    color: #ffffff;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 19.4px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 342px;
+}
+
+.emphasized-block .element {
+    height: 689px;
+    left: 15px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 709px;
+}

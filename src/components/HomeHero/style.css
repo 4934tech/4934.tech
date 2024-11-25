@@ -1,0 +1,126 @@
+.home-hero {
+  background-image: url(../../../public/homehero/home-hero.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 542px;
+  position: relative;
+  width: 1920px;
+}
+
+.home-hero .image {
+  height: 526px;
+  left: 1086px;
+  object-fit: cover;
+  position: absolute;
+  top: 8px;
+  width: 546px;
+}
+
+.home-hero .frame {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  left: 303px;
+  position: absolute;
+  top: 38px;
+}
+
+.home-hero .div {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.home-hero .text-wrapper {
+  color: #dddddd;
+  font-family: "Akshar-Regular", Helvetica;
+  font-size: 72.6px;
+  font-weight: 400;
+  height: 80px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: 645px;
+}
+
+.home-hero .element {
+  color: #ffffff;
+  font-family: "Prohibition Test-Regular", Helvetica;
+  font-size: 74px;
+  font-weight: 400;
+  letter-spacing: 2.22px;
+  line-height: normal;
+  position: relative;
+  width: 481px;
+}
+
+.home-hero .span {
+  letter-spacing: 1.64px;
+}
+
+.home-hero .text-wrapper-2 {
+  font-family: "Akshar-Regular", Helvetica;
+  letter-spacing: 1.64px;
+}
+
+.home-hero .a-team-of-carefully {
+  color: #dddddd;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  height: 90px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 715px;
+}
+
+.home-hero .line {
+  height: 1px;
+  object-fit: cover;
+  position: relative;
+  width: 615px;
+}
+
+.home-hero .group {
+  border-radius: 23.3px;
+  height: 45.82px;
+  position: relative;
+  width: 219px;
+}
+
+.home-hero .group-2 {
+  height: 24px;
+  left: 34px;
+  position: relative;
+  top: 12px;
+  width: 153px;
+}
+
+.home-hero .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-size: 19.4px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 116px;
+}
+
+.home-hero .akar-icons-arrow {
+  height: 19px;
+  left: 132px;
+  position: absolute;
+  top: 2px;
+  width: 19px;
+}
