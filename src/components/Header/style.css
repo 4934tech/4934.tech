@@ -22,14 +22,6 @@
 
 .header-left {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.header-right {
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 100%;
 }
@@ -39,40 +31,96 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 0.4rem;
 }
 
 .nav-item {
-    margin: 0 12%;
     display: flex;
-    align-items: center; /* Ensure vertical centering */
-    justify-content: center;
-    font-size: 1.1rem;
-    line-height: 1.5; /* Adjusted line-height for better vertical alignment */
-    transform: translateY(2%);
+    align-items: center;
+    position: relative;
 }
 
-.nav-item a {
-    text-decoration: none;
+.nav-link {
+    background: none;
+    border: none;
     color: #c4c4c4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #fff;
 }
 
 .nav-dropdown-icon {
-    margin-left: 5px;
-    font-size: 0.8rem;
-    display: inline-flex; /* Ensures proper alignment with text */
+    margin-left: 0.1rem;
+    display: inline-flex;
     align-items: center;
-    height: 43%;
-    transform: translateY(-15%) translateX(-10%); /* Adjusted slightly for consistent alignment */
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown-icon.rotate {
+    transform: rotate(180deg);
 }
 
 .header-logo {
-    height: 80%; /* Adjusted slightly for consistent alignment */
+    height: 80%;
+    cursor: pointer;
 }
 
-.header-image-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+/* Existing styles remain unchanged */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* Gradient background for the border */
+    background: linear-gradient(45deg, #ff0000, #00ff00);
+    padding: 1px; /* Space for the gradient border */
+    border-radius: 8px; /* Rounds the corners */
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+.dropdown-menu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Inner container to hold the dropdown items */
+.dropdown-menu .dropdown-content {
+    background-color: #000; /* Matches the header background */
+    border-radius: 7px; /* Slightly smaller to prevent overflow */
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+    /* Clip the background to the border radius */
+    background-clip: padding-box;
+}
+
+/* Dropdown items */
+.dropdown-item {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-item a {
+    color: #c4c4c4;
+    text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    color: #fff;
+}
+
+/* Ensure the gradient border stays within rounded corners */
+.dropdown-menu {
+    overflow: hidden;
 }
