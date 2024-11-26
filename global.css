@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -9,7 +11,7 @@ body {
     --emphasis-font-size: 54px;
     --emphasis-font-style: normal;
     --emphasis-font-weight: 400;
-    --emphasis-letter-spacing: 1.62px;
+    --emphasis-letter-spacing: 2px;
     --emphasis-line-height: normal;
     --gradient-colors: rgba(50, 183, 182, 1);
 }

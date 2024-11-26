@@ -2,78 +2,43 @@ import React from "react";
 import "./style.css";
 
 export const Header = () => {
+    function ExpandDropdown() { // TODO: Fix this function and make it do what it's supposed to do.
+        const dropdown = document.getElementsByClassName("nav-dropdown-icon")[0];
+        const navList = document.getElementsByClassName("nav-list")[0];
+        if (navList.style.display === "none") {
+            navList.style.display = "block";
+            dropdown.src = "/header/expand-less.png";
+        } else {
+            navList.style.display = "none";
+            dropdown.src = "/header/expand-more.png";
+        }
+    }
   return (
-    <div className="header">
-      <div className="link">
-        <div className="logo" />
-
-        <div className="product">
-          <div className="text-wrapper">Projects</div>
-
-          <img
-            className="expand-more"
-            alt="Expand more"
-            src="/header/expand-more.png"
-          />
-        </div>
-
-        <div className="div-wrapper">
-          <div className="div">Team</div>
-        </div>
-
-        <div className="div-wrapper">
-          <div className="div">Licensing</div>
-        </div>
-
-        <div className="div-2">
-          <div className="text-wrapper">Solutions</div>
-
-          <img
-            className="expand-more"
-            alt="Expand more"
-            src="/header/expand-more-1.png"
-          />
-        </div>
-
-        <div className="div-2">
-          <div className="div">Reach Out</div>
-        </div>
-
-        <div className="pricing">
-          <div className="text-wrapper">Socials</div>
-
-          <img
-            className="expand-more"
-            alt="Expand more"
-            src="/header/expand-more-2.png"
-          />
-        </div>
-      </div>
-
-      <div className="frame">
-        <div className="search-bar">
-          <div className="frame-2">
-            <div className="text-wrapper-2">Search</div>
-
-            <div className="code-icon">
-              <img className="line" alt="Line" src="/header/line-1-1.svg" />
+    <header className={"header"}>
+        <container className={"header-contents"}>
+        <div className={"header-left"}>
+            <div className={"header-image-container"}>
+                <img onClick={
+                    () => {
+                        window.location.href = "/";
+                    }
+                } className={"header-logo"} alt={"header-logo"} src={"/logo/banner/transparent-white.png"}></img>
             </div>
-          </div>
+            <ul className={"nav-list"}>
+                <li className={"nav-item"}>
+                    <a onClick={ExpandDropdown}>About</a>
+                    <img className={"nav-dropdown-icon"} alt={"dropdown-icon"} src={"/header/expand-more.png"} />
+                </li>
+                <li className={"nav-item"}>
+                    <a href={"/contact"}>Contact</a>
+                </li>
+            </ul>
         </div>
-
-        <div className="div-wrapper">
-          <div className="text-wrapper-3">Sign in</div>
+        <div className={"header-right"}>
+        <h1>Header</h1>
         </div>
-
-        <div className="overlap-group-wrapper">
-          <div className="overlap-group">
-            <div className="text-wrapper-4">Join Us</div>
-
-            <div className="rectangle" />
-          </div>
-        </div>
-      </div>
-    </div>
+        </container>
+    </header>
   );
 };
 
