@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.css";
+import { NavLink, redirect} from "react-router-dom";
 
 export const Header = () => {
     const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
@@ -13,7 +14,7 @@ export const Header = () => {
             <div className="header-contents">
                 <div className="header-left">
                     <img
-                        onClick={() => window.location.href = "/"}
+                        onClick={() => redirect("/")}
                         className="header-logo"
                         alt="Company Logo"
                         src="/logo/banner/transparent-white.png"
@@ -30,14 +31,17 @@ export const Header = () => {
                             </button>
                             <div className={`dropdown-menu ${isDropdownExpanded ? 'visible' : ''}`}>
                                 <ul className="dropdown-content">
-                                    <li className="dropdown-item"><a href="/about/company">Company</a></li>
-                                    <li className="dropdown-item"><a href="/about/team">Team</a></li>
-                                    <li className="dropdown-item"><a href="/about/careers">Careers</a></li>
+                                    <li className="dropdown-item"><NavLink to="/about/company">Company</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="/about/team">Team</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="/about/careers">Careers</NavLink></li>
                                 </ul>
                             </div>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/contact">Contact</a>
+                            <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/hackathon">Hackathons</NavLink>
                         </li>
                     </ul>
                 </div>
