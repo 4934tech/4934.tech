@@ -12,10 +12,10 @@ const Home = () => {
             <div>Taco</div>
             <div>Taco</div>
             <div>Taco</div>
-            <div>Taco</div>
+
             <Footer/>
         </>
     );
 };
-// Please work
+
 export default Home;
