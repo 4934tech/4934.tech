@@ -7,7 +7,6 @@ import Hackathon from "./pages/Hackathon.jsx";
 const App = () => {
     return (
         <BrowserRouter>
-            <Header />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/about" element={<About />} />
