@@ -12,7 +12,7 @@ const Home = () => {
             <div>Taco</div>
             <div>Taco</div>
             <div>Taco</div>
-
+            <div>Taco</div>
             <Footer/>
         </>
     );
