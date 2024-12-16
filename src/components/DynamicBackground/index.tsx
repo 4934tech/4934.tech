@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface Shape {
     x: number
@@ -26,10 +26,10 @@ const colorInterpolation = (color1: string, color2: string, factor: number): str
     return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
 }
 
-const createShape = (width: number, height: number): Shape => ({
+const createShape = (width: number, height: number, isMobile: boolean): Shape => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 200 + 150,
+    radius: isMobile ? Math.random() * 100 + 75 : Math.random() * 200 + 150,
     color: colorInterpolation('#03181c', '#32b7b6', Math.random()),
     vx: (Math.random() - 0.5) * 0.5,
     vy: (Math.random() - 0.5) * 0.5
@@ -37,6 +37,7 @@ const createShape = (width: number, height: number): Shape => ({
 
 export default function DynamicBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -48,10 +49,16 @@ export default function DynamicBackground() {
         let shapes: Shape[] = []
         let animationFrameId: number
 
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768) // Adjust this breakpoint as needed
+        }
+
         const resizeCanvas = () => {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
-            shapes = Array.from({ length: 5 }, () => createShape(canvas.width, canvas.height))
+            checkMobile()
+            const shapeCount = isMobile ? 3 : 5
+            shapes = Array.from({ length: shapeCount }, () => createShape(canvas.width, canvas.height, isMobile))
         }
 
         const drawShape = (shape: Shape) => {
@@ -93,7 +100,7 @@ export default function DynamicBackground() {
             window.removeEventListener('resize', resizeCanvas)
             cancelAnimationFrame(animationFrameId)
         }
-    }, [])
+    }, [isMobile])
 
     return (
         <canvas
