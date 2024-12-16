@@ -1,18 +1,6 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { NavItem } from './NavItem';
-
-interface MenuItem {
-    name: string;
-    description: string;
-    href: string;
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
-
-interface PopoverMenuProps {
-    label: string;
-    items: MenuItem[];
-    ctaItems?: MenuItem[];
-}
+import { PopoverMenuProps, MenuItem, MenuCTAItem } from '@/types/navbar';
 
 export function PopoverMenu({ label, items, ctaItems }: PopoverMenuProps) {
     return (
@@ -25,10 +13,10 @@ export function PopoverMenu({ label, items, ctaItems }: PopoverMenuProps) {
 
                     <PopoverPanel
                         transition
-                        className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-black shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+                        className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-black shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                     >
                         <div className="p-4">
-                            {items.map((item) => (
+                            {items.map((item: MenuItem) => (
                                 <div
                                     key={item.name}
                                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-900 transition-colors duration-200 ease-in-out"
@@ -48,7 +36,7 @@ export function PopoverMenu({ label, items, ctaItems }: PopoverMenuProps) {
                         </div>
                         {ctaItems && (
                             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-black">
-                                {ctaItems.map((item) => (
+                                {ctaItems.map((item: MenuCTAItem) => (
                                     <a
                                         key={item.name}
                                         href={item.href}
