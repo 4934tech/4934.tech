@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Logo } from './Logo';
 import { DisclosureMenu } from './DisclosureMenu';
-import { MenuProps } from '../../types/navbar';
+import { MenuProps, MenuItem } from '@/types/navbar';
 
 interface MobileMenuProps extends MenuProps {
     isOpen: boolean;
@@ -13,6 +13,23 @@ interface MobileMenuProps extends MenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathons, hackathonsCTA, projects, opacity, blur }: MobileMenuProps) {
+    // Convert CTA items to MenuItem format by adding a description field
+    const solutionsWithCTA: MenuItem[] = [
+        ...solutions,
+        ...solutionsCTA.map(cta => ({
+            ...cta,
+            description: '' // Add empty description to satisfy MenuItem type
+        }))
+    ];
+
+    const hackathonsWithCTA: MenuItem[] = [
+        ...hackathons,
+        ...hackathonsCTA.map(cta => ({
+            ...cta,
+            description: '' // Add empty description to satisfy MenuItem type
+        }))
+    ];
+
     return (
         <Transition show={isOpen} as={Fragment}>
             <Dialog as="div" className="relative z-50 lg:hidden" onClose={onClose}>
@@ -45,7 +62,7 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                                     style={{
                                         backdropFilter: `blur(${blur}px)`,
                                         WebkitBackdropFilter: `blur(${blur}px)`,
-                                        backgroundColor: `rgba(0, 0, 0, ${opacity + 0.6})` // Slightly darker than the navbar
+                                        backgroundColor: `rgba(0, 0, 0, ${opacity + 0.6})`
                                     }}
                                 >
                                     <div className="flex h-full flex-col overflow-y-scroll bg-transparent shadow-xl">
@@ -64,8 +81,8 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                                         </div>
                                         <div className="relative mt-6 flex-1 px-6">
                                             <div className="space-y-4">
-                                                <DisclosureMenu label="Solutions" items={[...solutions, ...solutionsCTA]} />
-                                                <DisclosureMenu label="Hackathons" items={[...hackathons, ...hackathonsCTA]} />
+                                                <DisclosureMenu label="Solutions" items={solutionsWithCTA} />
+                                                <DisclosureMenu label="Hackathons" items={hackathonsWithCTA} />
                                                 <a
                                                     href="#"
                                                     className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
@@ -99,3 +116,4 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
         </Transition>
     );
 }
+
