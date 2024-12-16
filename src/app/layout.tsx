@@ -31,7 +31,7 @@ export default function RootLayout({
         >
         <NavBar />
         <DynamicBackground />
-        <main className="pt-16">
+        <main className="pt-16 z-16">
             {children}
         </main>
         </body>

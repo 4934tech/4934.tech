@@ -58,8 +58,8 @@ export default function NavBar() {
         const handleScroll = () => {
             const scrollPosition = window.scrollY
             const maxScroll = 200 // Adjust this value to control how quickly the effect maxes out
-            const newOpacity = Math.min(scrollPosition / maxScroll, 0.7) // Max opacity of 0.7
-            const newBlur = Math.min(scrollPosition / maxScroll, 1) * 8 // Max blur of 8px
+            const newOpacity = Math.min(scrollPosition / maxScroll, 0.2) // Max opacity of 0.2
+            const newBlur = Math.min(scrollPosition / maxScroll, 1) * 100 // Max blur of 100px
             setOpacity(newOpacity)
             setBlur(newBlur)
         }

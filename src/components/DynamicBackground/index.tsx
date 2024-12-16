@@ -26,18 +26,25 @@ const colorInterpolation = (color1: string, color2: string, factor: number): str
     return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
 }
 
-const createShape = (width: number, height: number, isMobile: boolean): Shape => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    radius: isMobile ? Math.random() * 100 + 75 : Math.random() * 200 + 150,
-    color: colorInterpolation('#03181c', '#32b7b6', Math.random()),
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5
-})
+const createShape = (width: number, height: number, screenSize: number): Shape => {
+    const sizeMultiplier = Math.min(width, height) / 1000
+    const baseRadius = 50 + Math.random() * 150
+    const radius = baseRadius * sizeMultiplier
+
+    const speedMultiplier = screenSize / 1000
+    return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: radius,
+        color: colorInterpolation('#03181c', '#32b7b6', Math.random()),
+        vx: (Math.random() - 0.5) * speedMultiplier,
+        vy: (Math.random() - 0.5) * speedMultiplier
+    }
+}
 
 export default function DynamicBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const [isMobile, setIsMobile] = useState(false)
+    const [screenSize, setScreenSize] = useState(0)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -49,16 +56,21 @@ export default function DynamicBackground() {
         let shapes: Shape[] = []
         let animationFrameId: number
 
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768) // Adjust this breakpoint as needed
+        const updateScreenSize = () => {
+            const width = window.innerWidth
+            const height = window.innerHeight
+            const size = Math.sqrt(width * height)
+            setScreenSize(size)
+            return { width, height, size }
         }
 
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
-            checkMobile()
-            const shapeCount = isMobile ? 3 : 5
-            shapes = Array.from({ length: shapeCount }, () => createShape(canvas.width, canvas.height, isMobile))
+            const { width, height, size } = updateScreenSize()
+            canvas.width = width
+            canvas.height = height
+
+            const shapeCount = Math.max(3, Math.floor(size / 300))
+            shapes = Array.from({ length: shapeCount }, () => createShape(width, height, size))
         }
 
         const drawShape = (shape: Shape) => {
@@ -78,6 +90,25 @@ export default function DynamicBackground() {
             if (shape.y > canvas.height + shape.radius) shape.y = -shape.radius
         }
 
+        const drawOverlay = () => {
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+            gradient.addColorStop(0, 'rgba(0,0,0,0.1)')
+            gradient.addColorStop(1, 'rgba(30,30,30,0.2)')
+
+            ctx.fillStyle = gradient
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+            // Add some "metallic" lines
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)'
+            ctx.lineWidth = 1
+            for (let i = 0; i < canvas.width; i += 20) {
+                ctx.beginPath()
+                ctx.moveTo(i, 0)
+                ctx.lineTo(i, canvas.height)
+                ctx.stroke()
+            }
+        }
+
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -87,6 +118,8 @@ export default function DynamicBackground() {
             ctx.globalCompositeOperation = 'screen'
             shapes.forEach(drawShape)
             ctx.globalCompositeOperation = 'source-over'
+
+            drawOverlay()
 
             animationFrameId = requestAnimationFrame(animate)
         }
@@ -100,7 +133,7 @@ export default function DynamicBackground() {
             window.removeEventListener('resize', resizeCanvas)
             cancelAnimationFrame(animationFrameId)
         }
-    }, [isMobile])
+    }, [screenSize])
 
     return (
         <canvas
