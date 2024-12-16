@@ -1,16 +1,16 @@
-import { type IconType } from "@heroicons/react/24/outline"
+import type { LucideIcon } from 'lucide-react'
 
 export interface MenuItem {
     name: string;
     description: string;
     href: string;
-    icon: IconType;
+    icon: LucideIcon;
 }
 
 export interface MenuCTAItem {
     name: string;
     href: string;
-    icon: IconType;
+    icon: LucideIcon;
 }
 
 export interface MenuProps {

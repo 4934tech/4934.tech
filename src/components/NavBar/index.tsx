@@ -17,33 +17,34 @@ import { Logo } from './Logo'
 import { DesktopMenu } from './DesktopMenu'
 import { MobileMenu } from './MobileMenu'
 import { NavItem } from './NavItem'
+import { type MenuItem, type MenuCTAItem } from '@/types/navbar';
 
 // This component is made by Olav "Olavorw" Sharma.
 
-const projects = [
+const projects: MenuItem[] = [
     { name: 'UltraAgent', description: 'A powerful AI powered agent with real-world capabilities.', href: '/projects/ultraagent', icon: BeakerIcon },
     { name: 'malware.4934.tech', description: 'A massive malware repository with a focus on security.', href: '/projects/malware', icon: ShieldCheckIcon },
 ]
 
-const hackathons = [
+const hackathons: MenuItem[] = [
     { name: 'Winter 2024', description: 'An online single-day hackathon', href: 'hackathons/winter2024', icon: Bars3Icon },
     { name: 'PwnPointed', description: 'A security themed online hackathon.', href: 'hackathons/pwnpointed', icon: ShieldCheckIcon },
     { name: 'XAutomation', description: 'A multi-day in-person automation themed hackathon.', href: 'hackathons/summer2024', icon: XMarkIcon },
 ]
 
-const hackathonsCTA = [
+const hackathonsCTA: MenuCTAItem[] = [
     { name: 'View Upcoming', href: 'hackathons/upcoming', icon: ArrowPathIcon },
     { name: 'View All', href: 'hackathons', icon: ArrowPathIcon },
 ]
 
-const solutions = [
+const solutions: MenuItem[] = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
     { name: 'Security', description: 'Your customers data will be safe and secure', href: '#', icon: FingerPrintIcon },
     { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
     { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
 ]
-const solutionsCTA = [
+const solutionsCTA: MenuCTAItem[] = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
     { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ]
@@ -75,7 +76,7 @@ export default function NavBar() {
                     projects={projects}
                 />
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <NavItem label="Join Us" href="#" />
+                    <NavItem label="Join Us" href="#" hasArrow />
                 </div>
             </nav>
             <MobileMenu
