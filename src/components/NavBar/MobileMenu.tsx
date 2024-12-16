@@ -2,15 +2,11 @@ import { Dialog, DialogPanel } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Logo } from './Logo';
 import { DisclosureMenu } from './DisclosureMenu';
+import { type MenuProps } from '@/types/navbar';
 
-interface MobileMenuProps {
+interface MobileMenuProps extends MenuProps {
     isOpen: boolean;
     onClose: () => void;
-    solutions: any[];
-    solutionsCTA: any[];
-    hackathons: any[];
-    hackathonsCTA: any[];
-    projects: any[];
 }
 
 export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathons, hackathonsCTA, projects }: MobileMenuProps) {

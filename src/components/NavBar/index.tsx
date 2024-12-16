@@ -12,7 +12,7 @@ import {
     XMarkIcon,
     BeakerIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Logo } from './Logo'
 import { DesktopMenu } from './DesktopMenu'
 import { MobileMenu } from './MobileMenu'
