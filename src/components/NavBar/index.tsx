@@ -17,9 +17,7 @@ import { Logo } from './Logo'
 import { DesktopMenu } from './DesktopMenu'
 import { MobileMenu } from './MobileMenu'
 import { NavItem } from './NavItem'
-import { type MenuItem, type MenuCTAItem } from '@/types/navbar';
-
-// This component is made by Olav "Olavorw" Sharma.
+import { MenuItem, MenuCTAItem } from '../../types/navbar'
 
 const projects: MenuItem[] = [
     { name: 'UltraAgent', description: 'A powerful AI powered agent with real-world capabilities.', href: '/projects/ultraagent', icon: BeakerIcon },
@@ -69,7 +67,7 @@ export default function NavBar() {
     }, [])
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out`} style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}>
+        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out`} style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}>
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <Logo />
@@ -90,6 +88,8 @@ export default function NavBar() {
                     hackathons={hackathons}
                     hackathonsCTA={hackathonsCTA}
                     projects={projects}
+                    opacity={opacity}
+                    blur={blur}
                 />
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <NavItem label="Join Us" href="#" hasArrow />
@@ -103,6 +103,8 @@ export default function NavBar() {
                 hackathons={hackathons}
                 hackathonsCTA={hackathonsCTA}
                 projects={projects}
+                opacity={opacity}
+                blur={blur}
             />
         </header>
     )

@@ -8,7 +8,7 @@ export default function HomeHero() {
             <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-gray-100/10 hover:ring-gray-100/20 transition-colors duration-200 ease-in-out">
+                        <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-gray-100/10 hover:bg-gradient-to-tr from-[#32b7b6]/10 to-[#425389]/10 transition-colors duration-200 ease-in-out">
                             Announcing 4934 UltraAgent.{' '}
                             <a href="#" className="font-semibold bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
                                 <span aria-hidden="true" className="absolute inset-0" />
