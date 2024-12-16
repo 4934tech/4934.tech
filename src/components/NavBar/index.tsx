@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     ArrowPathIcon,
     Bars3Icon,
@@ -51,10 +51,23 @@ const solutionsCTA: MenuCTAItem[] = [
 
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [opacity, setOpacity] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY
+            const maxScroll = 200 // Adjust this value to control how quickly the header becomes opaque
+            const newOpacity = Math.min(scrollPosition / maxScroll, 1)
+            setOpacity(newOpacity)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
-        <header className="bg-black">
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ease-in-out backdrop-blur-md`} style={{ backgroundColor: `rgba(0, 0, 0, ${0.3 + opacity * 0.7})` }}>
+            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <Logo />
                 </div>
@@ -62,7 +75,7 @@ export default function NavBar() {
                     <button
                         type="button"
                         onClick={() => setMobileMenuOpen(true)}
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300"
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon aria-hidden="true" className="size-6" />
