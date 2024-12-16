@@ -52,13 +52,16 @@ const solutionsCTA: MenuCTAItem[] = [
 export default function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [opacity, setOpacity] = useState(0)
+    const [blur, setBlur] = useState(0)
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY
-            const maxScroll = 200 // Adjust this value to control how quickly the header becomes opaque
-            const newOpacity = Math.min(scrollPosition / maxScroll, 1)
+            const maxScroll = 200 // Adjust this value to control how quickly the effect maxes out
+            const newOpacity = Math.min(scrollPosition / maxScroll, 0.7) // Max opacity of 0.7
+            const newBlur = Math.min(scrollPosition / maxScroll, 1) * 8 // Max blur of 8px
             setOpacity(newOpacity)
+            setBlur(newBlur)
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -66,7 +69,7 @@ export default function NavBar() {
     }, [])
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ease-in-out backdrop-blur-md`} style={{ backgroundColor: `rgba(0, 0, 0, ${0.3 + opacity * 0.7})` }}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out`} style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}>
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <Logo />
@@ -75,7 +78,7 @@ export default function NavBar() {
                     <button
                         type="button"
                         onClick={() => setMobileMenuOpen(true)}
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300"
+                        className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-300 ease-in-out ${opacity > 0.5 ? 'text-gray-300' : 'text-gray-700'}`}
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon aria-hidden="true" className="size-6" />
