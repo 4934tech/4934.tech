@@ -28,9 +28,9 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                             {items.map((item: MenuItem) => (
                                 <div
                                     key={item.name}
-                                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-900 transition-colors duration-200 ease-in-out"
+                                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-black/15 transition-colors duration-200 ease-in-out"
                                 >
-                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-900 group-hover:bg-black">
+                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-black/15 group-hover:divide-gray-900/10">
                                         <item.icon aria-hidden="true" className="size-6 text-gray-300 group-hover:text-[#32b7b6] transition-colors duration-200 ease-in-out" />
                                     </div>
                                     <div className="flex-auto">
@@ -44,14 +44,14 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                             ))}
                         </div>
                         {ctaItems && (
-                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-black">
+                            <div className="grid grid-cols-2 divide-x divide-gray-900/5">
                                 {ctaItems.map((item: MenuCTAItem) => (
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-gray-900 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
+                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-gray-900/15 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                     >
-                                        <item.icon aria-hidden="true" className="size-5 flex-none bg-black" />
+                                        <item.icon aria-hidden="true" className="size-5 flex-none " />
                                         {item.name}
                                     </a>
                                 ))}

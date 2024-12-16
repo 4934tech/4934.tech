@@ -1,7 +1,7 @@
 import { PopoverGroup } from '@headlessui/react';
 import { NavItem } from './NavItem';
 import { PopoverMenu } from './PopoverMenu';
-import { MenuProps } from '../../types/navbar';
+import { MenuProps } from '@/types/navbar';
 
 interface DesktopMenuProps extends MenuProps {
     opacity: number;
