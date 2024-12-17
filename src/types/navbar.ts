@@ -21,9 +21,3 @@ export interface MenuProps {
     projects: MenuItem[];
 }
 
-export interface PopoverMenuProps {
-    label: string;
-    items: MenuItem[];
-    ctaItems?: MenuCTAItem[];
-}
-

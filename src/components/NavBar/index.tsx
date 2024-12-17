@@ -16,24 +16,24 @@ limitations under the License.
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import {useEffect, useState} from 'react'
 import {
     ArrowPathIcon,
     Bars3Icon,
+    BeakerIcon,
     ChartPieIcon,
     CursorArrowRaysIcon,
     FingerPrintIcon,
     ShieldCheckIcon,
     SquaresPlusIcon,
     XMarkIcon,
-    BeakerIcon,
 } from '@heroicons/react/24/outline'
-import { PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { Logo } from './Logo'
-import { DesktopMenu } from './DesktopMenu'
-import { MobileMenu } from './MobileMenu'
-import { NavItem } from './NavItem'
-import { MenuItem, MenuCTAItem } from '../../types/navbar'
+import {PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
+import {Logo} from './Logo'
+import {DesktopMenu} from './DesktopMenu'
+import {MobileMenu} from './MobileMenu'
+import {NavItem} from './NavItem'
+import {MenuCTAItem, MenuItem} from '@/types/navbar'
 
 const projects: MenuItem[] = [
     { name: 'UltraAgent', description: 'A powerful AI powered agent with real-world capabilities.', href: '/projects/ultraagent', icon: BeakerIcon },
@@ -72,8 +72,8 @@ export default function NavBar() {
         const handleScroll = () => {
             const scrollPosition = window.scrollY
             const maxScroll = 200 // Adjust this value to control how quickly the effect maxes out
-            const newOpacity = Math.min(scrollPosition / maxScroll, 0.2) // Max opacity of 0.2
-            const newBlur = Math.min(scrollPosition / maxScroll, 1) * 100 // Max blur of 100px
+            const newOpacity = Math.min(scrollPosition / maxScroll, 0.6) // Max opacity of 0.6
+            const newBlur = Math.min(scrollPosition / maxScroll * 20, 20) // Max blur of 20px
             setOpacity(newOpacity)
             setBlur(newBlur)
         }

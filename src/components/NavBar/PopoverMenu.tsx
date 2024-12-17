@@ -27,6 +27,7 @@ interface PopoverMenuProps {
 }
 
 export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMenuProps) {
+    console.log('PopoverMenu blur:', blur); // Add this line
     return (
         <Popover className="relative">
             {({ open }) => (
@@ -38,7 +39,11 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                     <PopoverPanel
                         transition
                         className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in`}
-                        style={{ backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)`, backgroundColor: `rgba(0, 0, 0, ${opacity})` }}
+                        style={{
+                            backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+                            backdropFilter: `blur(${blur}px)`,
+                            WebkitBackdropFilter: `blur(${blur}px)`,
+                        }}
                     >
                         <div className="p-4">
                             {items.map((item: MenuItem) => (

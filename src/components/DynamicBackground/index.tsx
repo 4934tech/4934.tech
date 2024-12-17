@@ -29,21 +29,6 @@ interface Shape {
     throwVelocity: { x: number; y: number } | null
 }
 
-const colorInterpolation = (color1: string, color2: string, factor: number): string => {
-    const r1 = parseInt(color1.slice(1, 3), 16)
-    const g1 = parseInt(color1.slice(3, 5), 16)
-    const b1 = parseInt(color1.slice(5, 7), 16)
-    const r2 = parseInt(color2.slice(1, 3), 16)
-    const g2 = parseInt(color2.slice(3, 5), 16)
-    const b2 = parseInt(color2.slice(5, 7), 16)
-
-    const r = Math.round(r1 + factor * (r2 - r1))
-    const g = Math.round(g1 + factor * (g2 - g1))
-    const b = Math.round(b1 + factor * (b2 - b1))
-
-    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
-}
-
 const createShape = (width: number, height: number, screenSize: number): Shape => {
     const sizeMultiplier = Math.min(width, height) / 1000
     const baseRadius = 50 + Math.random() * 150
@@ -76,7 +61,7 @@ export default function DynamicBackground() {
         const size = Math.sqrt(width * height)
         const shapeCount = Math.max(3, Math.floor(size / 300))
         return Array.from({ length: shapeCount }, () => createShape(width, height, size))
-    }, [screenSize])
+    }, [])
 
     useEffect(() => {
         const canvas = canvasRef.current

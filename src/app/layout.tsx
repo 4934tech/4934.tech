@@ -3,6 +3,7 @@ import { Geist, Azeret_Mono as Geist_Mono } from 'next/font/google';
 import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
 import DynamicBackground from "../components/DynamicBackground";
+import React from "react";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
