@@ -29,7 +29,7 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
-import {Logo} from './Logo'
+import {Logo} from '@/components/Logo'
 import {DesktopMenu} from './DesktopMenu'
 import {MobileMenu} from './MobileMenu'
 import {NavItem} from './NavItem'

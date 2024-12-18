@@ -3,6 +3,7 @@ import { Geist, Azeret_Mono } from 'next/font/google';
 import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
 import DynamicBackground from "@/components/DynamicBackground";
+import Footer from "@/components/Footer";
 import React from "react";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ const geistMono = Azeret_Mono({
 
 export const metadata: Metadata = {
     title: "4934 Tech",
-    description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+    description: "A transparent, open source, friendly community organization for makers.",
     authors: [
         { name: 'Olav "Olavorw" Sharma', url: "https://olavorw.com" }
     ],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "4934 Tech",
-        description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        description: "A transparent, open source, friendly community organization for makers.",
         url: "https://4934.tech",
         siteName: "4934 Tech",
         images: [
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
                 url: "https://4934.tech/Logo/4934sqbd.png",
                 width: 1024,
                 height: 1024,
-                alt: "4934 Tech Logo",
+                alt: "4934 Tech Index",
             },
         ],
         locale: "en_US",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "4934 Tech",
-        description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        description: "A transparent, open source, friendly community organization for makers.",
         images: ["https://4934.tech/Logo/4934sqbd.png"],
         creator: "@4934tech",
     },
@@ -71,6 +72,7 @@ export default function RootLayout({
         <main className="pt-16 z-10 relative">
             {children}
         </main>
+        <Footer />
         </body>
         </html>
     );

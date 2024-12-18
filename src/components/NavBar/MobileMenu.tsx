@@ -17,7 +17,7 @@ limitations under the License.
 import { Dialog, DialogPanel, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Logo } from './Logo';
+import { Logo } from '@/components/Logo';
 import { DisclosureMenu } from './DisclosureMenu';
 import { MenuProps, MenuItem } from '@/types/navbar';
 
