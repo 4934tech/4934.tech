@@ -69,9 +69,12 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-gray-900/15 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
+                                        className="group flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-gray-900/15 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                     >
-                                        <item.icon aria-hidden="true" className="size-5 flex-none " />
+                                        <item.icon
+                                            aria-hidden="true"
+                                            className="size-5 flex-none text-white transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]"
+                                        />
                                         {item.name}
                                     </a>
                                 ))}
