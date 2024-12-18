@@ -27,9 +27,9 @@ export const metadata: Metadata = {
         "Game", "AI", "Machine Learning", "UltraAgent"
     ],
     icons: {
-        icon: "/favicon/4934sqg.ico",
-        apple: "/logo/4934sqbd.png",
-        shortcut: "/logo/4934sqbd.png",
+        icon: "favicon/4934sqg.ico",
+        apple: "logo/4934sqbd.png",
+        shortcut: "logo/4934sqbd.png",
     },
     openGraph: {
         title: "4934",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         siteName: "4934 Tech",
         images: [
             {
-                url: "/logo/4934sqbd.png",
+                url: "https://raw.githubusercontent.com/4934tech/4934.tech/refs/heads/master/public/Logo/4934sqbd.png",
                 width: 1024,
                 height: 1024,
                 alt: "4934 Tech Logo",
