@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "4934 Tech",
-    description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+    title: "4934",
+    description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
     authors: [
         { name: 'Olav "Olavorw" Sharma', url: "https://olavorw.com" }
     ],
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
         shortcut: "/logo/4934sqbd.png",
     },
     openGraph: {
-        title: "4934 Tech",
-        description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        title: "4934",
+        description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
         url: "https://4934.tech",
         siteName: "4934 Tech",
         images: [
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "4934 Tech - Community of Makers",
-        description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        title: "4934",
+        description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
         images: ["/logo/4934sqbd.png"],
         creator: "@4934tech",
     },
