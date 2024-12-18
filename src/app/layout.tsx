@@ -16,8 +16,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "4934.tech",
-    description: "4934.tech is a website made by Olav \"Olavorw\" Sharma.",
+    title: "4934 Tech",
+    description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+    authors: [
+        { name: 'Olav "Olavorw" Sharma', url: "https://olavorw.com" }
+    ],
+    keywords: [
+        "4934", "Tech", "Community", "Makers", "Olavorw", "Olav Sharma", "Olanorw",
+        "Programming", "Coding", "Software", "Development", "Web", "App", "Mobile",
+        "Game", "AI", "Machine Learning", "UltraAgent"
+    ],
+    icons: {
+        icon: "/favicon/4934sqg.ico",
+        apple: "/logo/4934sqbd.png",
+        shortcut: "/logo/4934sqbd.png",
+    },
+    openGraph: {
+        title: "4934 Tech",
+        description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        url: "https://4934.tech",
+        siteName: "4934 Tech",
+        images: [
+            {
+                url: "/logo/4934sqbd.png",
+                width: 1024,
+                height: 1024,
+                alt: "4934 Tech Logo",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "4934 Tech - Community of Makers",
+        description: "Join 4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
+        images: ["/logo/4934sqbd.png"],
+        creator: "@4934tech",
+    },
 };
 
 export default function RootLayout({

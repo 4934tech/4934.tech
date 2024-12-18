@@ -27,7 +27,6 @@ interface PopoverMenuProps {
 }
 
 export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMenuProps) {
-    console.log('PopoverMenu blur:', blur); // Add this line
     return (
         <Popover className="relative">
             {({ open }) => (
