@@ -6,11 +6,13 @@ export default function Home() {
       <>
           <HomeHero />
           <CallToAction
-                Tagline="AI with real world capabilities."
-                Description="4934 UltraAgent is a powerful AI agent to tightly integrate with your existing systems. It's designed to be a seamless extension of your life, with power to control whatever you want it to."
-                ButtonText="Get started"
-                ButtonLink="#"
-                ImageSource="https://tailwindui.com/plus/img/component-images/dark-project-app-screenshot.png"
+                Tagline="We strive on community."
+                Description="Join us in our mission to make the world a better place through technology."
+                ButtonText="Start Contributing"
+                ButtonLink="https://github.com/4934tech"
+                ImageSource="/Screenshots/UltraAgentSourceCode.png"
+                ImageWidth={800}
+                ImageHeight={800}
           />
       </>
   );

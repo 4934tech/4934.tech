@@ -1,16 +1,22 @@
 import { forwardRef } from 'react';
+import Image from 'next/image';
 
 interface CallToActionProps {
     Tagline: string;
     Description: string;
     ButtonText: string;
     ButtonLink: string;
+    GradientStartColor?: string;
+    GradientStopColor?: string;
     ImageSource: string;
+    ImageWidth: number;
+    ImageHeight: number;
+    ImageSizing?: string;
 }
 
 const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
     (
-        { Tagline, Description, ButtonText, ButtonLink, ImageSource },
+        { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" },
         ref
     ) => {
         return (
@@ -31,8 +37,8 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
                             />
                             <defs>
                                 <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                                    <stop stopColor="#7775D6" />
-                                    <stop offset={1} stopColor="#E935C1" />
+                                    <stop stopColor={GradientStartColor} />
+                                    <stop offset={1} stopColor={GradientStopColor} />
                                 </radialGradient>
                             </defs>
                         </svg>
@@ -52,13 +58,13 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
                                 </a>
                             </div>
                         </div>
-                        <div className="relative mt-16 h-80 lg:mt-8">
-                            <img
+                        <div className="relative mt-24 h-80 lg:mt-20">
+                            <Image
                                 alt="App screenshot"
                                 src={ImageSource}
-                                width={1824}
-                                height={1080}
-                                className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                                width={ImageWidth}
+                                height={ImageHeight}
+                                className={`absolute left-0 top-0 w-${ImageSizing} max-w-none rounded-md bg-white/5 ring-1 ring-white/10`}
                             />
                         </div>
                     </div>
