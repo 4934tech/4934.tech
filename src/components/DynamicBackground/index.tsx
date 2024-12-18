@@ -40,7 +40,7 @@ const createShape = (width: number, height: number, screenSize: number): Shape =
         x: Math.random() * width,
         y: Math.random() * height,
         radius: radius,
-        color: `rgba(${Math.floor(Math.random() * 30 + 30)}, ${Math.floor(Math.random() * 30 + 30)}, ${Math.floor(Math.random() * 30 + 30)}, ${Math.random() * 0.1 + 0.2})`,
+        color: `rgba(${Math.floor(Math.random() * 50 + 50)}, ${Math.floor(Math.random() * 50 + 50)}, ${Math.floor(Math.random() * 50 + 50)}, ${Math.random() * 0.1 + 0.2})`,
         vx: speed,
         vy: speed,
         originalSpeed: Math.abs(speed),
@@ -263,7 +263,7 @@ export default function DynamicBackground() {
             style={{
                 filter: 'blur(40px)',
                 backdropFilter: 'blur(10px)',
-                backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                backgroundColor: 'rgba(0,0,0,0.7)'
             }}
         />
     )
