@@ -1,3 +1,19 @@
+/*
+Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 export default function PrivacyPolicy() {
     return (
         <>
@@ -8,7 +24,7 @@ export default function PrivacyPolicy() {
                         Effective Date: December 17th, 2024
                     </p>
                     <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-                        Welcome to 4934.tech (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;). We value your privacy
+                        Welcome to 4934.tech / 4934 Tech (&quot;we,&quot; &quot;our,&quot; &quot;us&quot;). We value your privacy
                         and are committed to protecting your personal information. This Privacy Policy explains how we
                         collect, use, and protect your information when you interact with our website and community.
                     </p>
@@ -97,8 +113,12 @@ export default function PrivacyPolicy() {
                     </p>
                     <ul>
                         <li className="mt-3 text-pretty text-lg font-medium text-gray-300 list-disc list-inside"><strong>Email</strong>: 4934@4934.tech</li>
-                        {/* <li className="mt-3 text-pretty text-lg font-medium text-gray-300"><strong>Contact Form</strong>: You can find our online contact form at <a href="https://4934.tech/contact">https://4934.tech/contact</a>.</li> */}
+                        {/* <li className="mt-3 text-pretty text-lg font-medium text-gray-300"><strong>Contact Form</strong>: You can find our <a className="text-blue-400 hover:underline" href="https://4934.tech/contact">online contact form here</a>.</li> */}
                     </ul>
+                    <hr className="mt-12 border-t-1 border-gray-700"/>
+                    <p className="mt-8 text-pretty text-lg font-medium text-gray-300">
+                        By using our website, you agree to the terms of this Privacy Policy. Thank you for being part of the 4934.tech community!
+                    </p>
                 </div>
             </div>
         </>
