@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
     icons: {
         icon: [
-            { url: '/favicon.ico', sizes: '32x32' },
+            { url: '/favicon.ico?v=1.1', sizes: '32x32' },
         ],
     },
     openGraph: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         siteName: "4934 Tech",
         images: [
             {
-                url: "https://4934.tech/logo/4934sqbd.png",
+                url: "https://4934.tech/Logo/4934sqbd.png",
                 width: 1024,
                 height: 1024,
                 alt: "4934 Tech Logo",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "4934 Tech",
         description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
-        images: ["https://4934.tech/logo/4934sqbd.png"],
+        images: ["https://4934.tech/Logo/4934sqbd.png"],
         creator: "@4934tech",
     },
 };
