@@ -22,14 +22,14 @@ export function Logo() {
             <span className="sr-only">4934</span>
             <div className="relative w-20 h-20 overflow-hidden">
                 <Image
-                    src="/4934sqw.png"
+                    src="/logo/4934sqw.png"
                     alt=""
                     width={80}
                     height={80}
                     className="absolute top-0 left-0 transition-opacity duration-200 ease-in-out group-hover:opacity-0"
                 />
                 <Image
-                    src="/4934sqg.png"
+                    src="/logo/4934sqg.png"
                     alt=""
                     width={80}
                     height={80}
