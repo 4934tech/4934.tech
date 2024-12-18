@@ -7,7 +7,7 @@ const hoverClasses = "hover:text-transparent hover:bg-gradient-to-r hover:from-[
 
 export default function Footer() {
     return (
-        <footer className="px-6 py-12 md:py-16" style={{ backgroundColor: `rgba(0, 0, 0, 0.6)`, backdropFilter: `blur(20px)`, WebkitBackdropFilter: `blur(20px)` }}>
+        <footer className="px-6 py-12 md:py-16 mt-auto" style={{ backgroundColor: `rgba(0, 0, 0, 0.6)`, backdropFilter: `blur(20px)`, WebkitBackdropFilter: `blur(20px)` }}>
             <div className="mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
                     {/* Logo and Description Column */}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Azeret_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
+import { Azeret_Mono } from 'next/font/google';
 import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
 import DynamicBackground from "@/components/DynamicBackground";
@@ -65,11 +66,11 @@ export default function RootLayout({
     return (
         <html lang="en" className="dark">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-950 text-gray-100`}
+            className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-950 text-gray-100 flex flex-col min-h-screen`}
         >
         <NavBar />
         <DynamicBackground />
-        <main className="pt-16 z-10 relative">
+        <main className="flex-grow pt-16 z-10 relative">
             {children}
         </main>
         <Footer />

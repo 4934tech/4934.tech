@@ -1,27 +1,15 @@
-/*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 'use client'
 
 import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Field, Label, Switch } from '@headlessui/react'
+import { useActionState } from 'react'
+import { useFormStatus } from 'react-dom'
+import { submitContactForm } from '@/lib/actions/contact'
 
 export default function ContactForm() {
     const [agreed, setAgreed] = useState(false)
+    const [state, formAction] = useActionState(submitContactForm, { success: false, errors: {} })
+    const { pending } = useFormStatus()
 
     return (
         <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
@@ -29,7 +17,7 @@ export default function ContactForm() {
                 <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contact 4934</h2>
                 <p className="mt-2 text-lg/8 text-gray-400">If you would like to get in touch with us, please fill out this form.</p>
             </div>
-            <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+            <form action={formAction} className="mx-auto mt-16 max-w-xl sm:mt-20">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
                         <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white">
@@ -42,8 +30,12 @@ export default function ContactForm() {
                                 type="text"
                                 autoComplete="given-name"
                                 className="block w-full rounded-md bg-black/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-800/50 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
+                                required
                             />
                         </div>
+                        {state.errors?.firstName && (
+                            <p className="mt-2 text-sm text-red-500">{state.errors.firstName[0]}</p>
+                        )}
                     </div>
                     <div>
                         <label htmlFor="last-name" className="block text-sm/6 font-semibold text-white">
@@ -58,10 +50,13 @@ export default function ContactForm() {
                                 className="block w-full rounded-md bg-black/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-800/50 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
                             />
                         </div>
+                        {state.errors?.lastName && (
+                            <p className="mt-2 text-sm text-red-500">{state.errors.lastName[0]}</p>
+                        )}
                     </div>
                     <div className="sm:col-span-2">
                         <label htmlFor="company" className="block text-sm/6 font-semibold text-white">
-                            Company
+                            Organization
                         </label>
                         <div className="mt-2.5">
                             <input
@@ -84,9 +79,14 @@ export default function ContactForm() {
                                 type="email"
                                 autoComplete="email"
                                 className="block w-full rounded-md bg-black/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-800/50 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
+                                required
                             />
                         </div>
+                        {state.errors?.email && (
+                            <p className="mt-2 text-sm text-red-500">{state.errors.email[0]}</p>
+                        )}
                     </div>
+                    {/*
                     <div className="sm:col-span-2">
                         <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-white">
                             Phone number
@@ -114,13 +114,18 @@ export default function ContactForm() {
                                 <input
                                     id="phone-number"
                                     name="phone-number"
-                                    type="text"
+                                    type="tel"
                                     placeholder="123-456-7890"
                                     className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base bg-black/5 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
+                                    required
                                 />
                             </div>
                         </div>
+                        {state.errors?.phoneNumber && (
+                            <p className="mt-2 text-sm text-red-500">{state.errors.phoneNumber[0]}</p>
+                        )}
                     </div>
+                    */}
                     <div className="sm:col-span-2">
                         <label htmlFor="message" className="block text-sm/6 font-semibold text-white">
                             Message
@@ -131,9 +136,12 @@ export default function ContactForm() {
                                 name="message"
                                 rows={4}
                                 className="block w-full rounded-md bg-black/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-800/50 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
-                                defaultValue={''}
+                                required
                             />
                         </div>
+                        {state.errors?.message && (
+                            <p className="mt-2 text-sm text-red-500">{state.errors.message[0]}</p>
+                        )}
                     </div>
                     <Field className="flex gap-x-4 sm:col-span-2">
                         <div className="flex h-6 items-center">
@@ -162,16 +170,19 @@ export default function ContactForm() {
                 <div className="mt-10">
                     <button
                         type="submit"
-                        disabled={true} // Add this line to disable the button
+                        disabled={!agreed || pending}
                         className="relative w-full overflow-hidden rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#32b7b6] transition-all duration-300 ease-in-out group disabled:cursor-not-allowed disabled:opacity-50"
                     >
                         <span
-                          className="absolute inset-0 bg-gradient-to-br from-[#1d6a69] to-[#1d243c] transition-opacity duration-300 ease-in-out group-hover:opacity-0 group-disabled:opacity-100"></span>
+                            className="absolute inset-0 bg-gradient-to-br from-[#1d6a69] to-[#1d243c] transition-opacity duration-300 ease-in-out group-hover:opacity-0 group-disabled:opacity-100"></span>
                         <span
-                             className="absolute inset-0 bg-gradient-to-br from-[#32b7b6] to-[#425389] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-disabled:opacity-0"></span>
-                        <span className="relative z-10">Let&#39;s talk</span>
+                            className="absolute inset-0 bg-gradient-to-br from-[#32b7b6] to-[#425389] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-disabled:opacity-0"></span>
+                        <span className="relative z-10">{pending ? 'Sending...' : 'Let\'s talk'}</span>
                     </button>
                 </div>
+                {state.success && (
+                    <p className="mt-4 text-sm text-green-500 text-center">Thank you for your message. We&apos;ll be in touch soon!</p>
+                )}
             </form>
         </div>
     )
