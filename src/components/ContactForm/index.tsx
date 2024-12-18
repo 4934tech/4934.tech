@@ -151,7 +151,7 @@ export default function Index() {
                         </div>
                         <Label className="text-sm/6 text-gray-400">
                             By selecting this, you agree to our{' '}
-                            <a href="#"
+                            <a href="https://4934.tech/policies/privacy-policy"
                                className="text-transparent bg-gradient-to-r from-[#32b7b6] to-[#1d243c] bg-clip-text transition-colors">
                                 privacy&nbsp;policy
                             </a>
