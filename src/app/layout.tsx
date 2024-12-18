@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Azeret_Mono as Geist_Mono } from 'next/font/google';
+import { Geist, Azeret_Mono } from 'next/font/google';
 import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
 import DynamicBackground from "@/components/DynamicBackground";
@@ -10,13 +10,13 @@ const geistSans = Geist({
     subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Azeret_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-    title: "4934",
+    title: "4934 Tech",
     description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
     authors: [
         { name: 'Olav "Olavorw" Sharma', url: "https://olavorw.com" }
@@ -27,18 +27,18 @@ export const metadata: Metadata = {
         "Game", "AI", "Machine Learning", "UltraAgent"
     ],
     icons: {
-        icon: "favicon/4934sqg.ico",
-        apple: "logo/4934sqbd.png",
-        shortcut: "logo/4934sqbd.png",
+        icon: [
+            { url: '/favicon.ico', sizes: '32x32' },
+        ],
     },
     openGraph: {
-        title: "4934",
+        title: "4934 Tech",
         description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
         url: "https://4934.tech",
         siteName: "4934 Tech",
         images: [
             {
-                url: "https://raw.githubusercontent.com/4934tech/4934.tech/refs/heads/master/public/Logo/4934sqbd.png",
+                url: "https://4934.tech/logo/4934sqbd.png",
                 width: 1024,
                 height: 1024,
                 alt: "4934 Tech Logo",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "4934",
+        title: "4934 Tech",
         description: "4934 Tech, a leading community organization for makers, coders, and AI enthusiasts.",
-        images: ["/logo/4934sqbd.png"],
+        images: ["https://4934.tech/logo/4934sqbd.png"],
         creator: "@4934tech",
     },
 };
@@ -64,11 +64,11 @@ export default function RootLayout({
     return (
         <html lang="en" className="dark">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-gray-100`}
+            className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-950 text-gray-100`}
         >
         <NavBar />
         <DynamicBackground />
-        <main className="pt-16 z-16">
+        <main className="pt-16 z-10 relative">
             {children}
         </main>
         </body>
