@@ -17,8 +17,8 @@ limitations under the License.
 export default function Copyright() {
     return (
         <>
-            <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
-                <div className="mx-auto max-w-3xl lg:mx-20">
+            <div className="mt-16 isolate px-6 py-24 sm:py-32 lg:px-8">
+                <div className="mx-auto max-w-4xl px-6 lg:px-8">
                     <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Copyright
                         Information</h2>
                     <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
@@ -85,10 +85,13 @@ export default function Copyright() {
                     <hr className="mt-12 border-t-1 border-gray-700"/>
                     <h3 className="mt-12 text-3xl font-semibold text-white">4. Use of Content</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
-                        Our website and its content are protected by copyright laws. You may not go further than the restrictions made clear in the respective project&apos;s license without our explicit permission.
+                        Our website and its content are protected by copyright laws. You may not go further than the
+                        restrictions made clear in the respective project&apos;s license without our explicit
+                        permission.
                     </p>
                     <p className="mt-8 text-pretty text-lg font-medium text-gray-300">
-                        If you&apos;re looking to get permission to use our content, please contact us using one of the methods at the bottom of this article.
+                        If you&apos;re looking to get permission to use our content, please contact us using one of the
+                        methods at the bottom of this article.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
                     <h3 className="mt-12 text-3xl font-semibold text-white">5. 4934.tech License Information</h3>

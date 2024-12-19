@@ -1,30 +1,27 @@
-/*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+'use client'
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
+import { useEffect, useState } from 'react'
 import Link from "next/link"
-import {Logo} from "@/components/Logo"
-import { Facebook, Instagram, Twitter, Github, Youtube } from 'lucide-react'
+import { Logo } from "@/components/Logo"
+import { Facebook, Mail, Twitter, Github, Youtube } from 'lucide-react'
 
-const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-colors duration-200 ease-in-out group";
+const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-all duration-200 ease-in-out group";
 const hoverClasses = "hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text";
 
 export default function Footer() {
+    const [opacity, setOpacity] = useState(0)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setOpacity(0.6)
+        }, 100)
+
+        return () => clearTimeout(timer)
+    }, [])
+
     return (
-        <footer className="px-6 py-12 md:py-16 mt-auto" style={{ backgroundColor: `rgba(0, 0, 0, 0.6)`, backdropFilter: `blur(20px)`, WebkitBackdropFilter: `blur(20px)` }}>
-            <div className="mx-auto max-w-7xl">
+        <footer className="px-6 py-12 md:py-16 mt-auto transition-all duration-500 ease-in-out" style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(20px)`, WebkitBackdropFilter: `blur(20px)` }}>
+            <div className="mx-auto max-w-[1400px]">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
                     {/* Logo and Description Column */}
                     <div className="col-span-full lg:col-span-4">
@@ -35,25 +32,25 @@ export default function Footer() {
                             A transparent, open source, friendly community organization for makers.
                         </p>
                         <div className="mt-6 flex gap-6">
-                            <Link href="#" className="group">
+                            <Link href="https://facebook.com/4934tech" className="group">
                                 <Facebook className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
-                            <Link href="#" className="group">
-                                <Instagram className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">Instagram</span>
-                            </Link>
-                            <Link href="#" className="group">
+                            <Link href="https://twitter.com/4934tech" className="group">
                                 <Twitter className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                 <span className="sr-only">Twitter</span>
                             </Link>
-                            <Link href="#" className="group">
+                            <Link href="https://4934tech/4934tech" className="group">
                                 <Github className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                 <span className="sr-only">GitHub</span>
                             </Link>
                             <Link href="#" className="group">
                                 <Youtube className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                 <span className="sr-only">YouTube</span>
+                            </Link>
+                            <Link href="mailto:4934@4934.tech" className="group">
+                                <Mail className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                <span className="sr-only">Email</span>
                             </Link>
                         </div>
                     </div>

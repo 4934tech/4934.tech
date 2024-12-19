@@ -1,22 +1,6 @@
-/*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 'use client'
 
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import {
     ArrowPathIcon,
     Bars3Icon,
@@ -28,12 +12,12 @@ import {
     SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import {PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
-import {Logo} from '@/components/Logo'
-import {DesktopMenu} from './DesktopMenu'
-import {MobileMenu} from './MobileMenu'
-import {NavItem} from './NavItem'
-import {MenuCTAItem, MenuItem} from '@/types/navbar'
+import { PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Logo } from '@/components/Logo'
+import { DesktopMenu } from './DesktopMenu'
+import { MobileMenu } from './MobileMenu'
+import { NavItem } from './NavItem'
+import { MenuCTAItem, MenuItem } from '@/types/navbar'
 
 const projects: MenuItem[] = [
     { name: 'UltraAgent', description: 'A powerful AI powered agent with real-world capabilities.', href: '/projects/ultraagent', icon: BeakerIcon },
@@ -83,8 +67,8 @@ export default function NavBar() {
     }, [])
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out`} style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}>
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between py-3 px-6 lg:px-8">
+        <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out" style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(${blur}px)`, WebkitBackdropFilter: `blur(${blur}px)` }}>
+            <nav aria-label="Global" className="mx-auto flex max-w-[1400px] items-center justify-between py-3 px-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <Logo />
                 </div>
@@ -125,4 +109,3 @@ export default function NavBar() {
         </header>
     )
 }
-
