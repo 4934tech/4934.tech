@@ -97,21 +97,21 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                                         </div>
                                         <div className="relative mt-6 flex-1 px-6">
                                             <div className="space-y-4">
-                                                <DisclosureMenu label="Solutions" items={solutionsWithCTA} />
-                                                <DisclosureMenu label="Hackathons" items={hackathonsWithCTA} />
+                                                <DisclosureMenu label="Solutions" items={solutionsWithCTA}/>
                                                 <a
                                                     href="#"
                                                     className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                                 >
                                                     Gallery
                                                 </a>
+                                                <DisclosureMenu label="Hackathons" items={hackathonsWithCTA}/>
                                                 <a
                                                     href="#"
                                                     className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                                 >
                                                     About
                                                 </a>
-                                                <DisclosureMenu label="Projects" items={projects} />
+                                                <DisclosureMenu label="Projects" items={projects}/>
                                             </div>
                                         </div>
                                         <div className="border-t border-gray-700/50 px-6 py-6">
