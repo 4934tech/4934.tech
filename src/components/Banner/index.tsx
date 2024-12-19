@@ -58,7 +58,7 @@ export default function Banner({ mainTitle, subtitle, buttonText, buttonHref }: 
         >
             <div
                 className={`
-                    flex items-center justify-between gap-x-6 rounded-lg bg-black/2 backdrop-blur-md px-10 py-2.5 
+                    flex items-center justify-between gap-x-6 rounded-lg bg-black/40 backdrop-blur-md px-10 py-2.5 
                     transition-all duration-300 ease-in-out
                     ${isAnimated && !isDisappearing ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
                 `}

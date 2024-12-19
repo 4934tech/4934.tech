@@ -30,7 +30,7 @@ export default function Footer() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setOpacity(0.2)
+            setOpacity(0.4)
         }, 100)
 
         return () => clearTimeout(timer)
