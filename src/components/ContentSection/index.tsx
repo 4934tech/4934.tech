@@ -16,7 +16,6 @@ limitations under the License.
 
 import { ArrowRightIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
-import {className} from "postcss-selector-parser";
 
 interface Feature {
     icon: typeof ArrowRightIcon
