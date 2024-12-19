@@ -35,11 +35,13 @@ import { MobileMenu } from './MobileMenu'
 import { NavItem } from './NavItem'
 import { MenuCTAItem, MenuItem } from '@/types/navbar'
 
+// noinspection SpellCheckingInspection
 const projects: MenuItem[] = [
     { name: 'UltraAgent', description: 'A powerful AI powered agent with real-world capabilities.', href: '/projects/ultraagent', icon: BeakerIcon },
     { name: 'malware.4934.tech', description: 'A massive malware repository with a focus on security.', href: '/projects/malware', icon: ShieldCheckIcon },
 ]
 
+// noinspection SpellCheckingInspection
 const hackathons: MenuItem[] = [
     { name: 'Winter 2024', description: 'An online single-day hackathon', href: 'hackathons/winter2024', icon: Bars3Icon },
     { name: 'PwnPointed', description: 'A security themed online hackathon.', href: 'hackathons/pwnpointed', icon: ShieldCheckIcon },

@@ -19,6 +19,7 @@ limitations under the License.
 import { useEffect, useState } from 'react'
 import Link from "next/link"
 import { Logo } from "@/components/Logo"
+// noinspection JSDeprecatedSymbols
 import { Facebook, Mail, Twitter, Github, Youtube } from 'lucide-react'
 
 const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-all duration-200 ease-in-out group";
@@ -35,6 +36,7 @@ export default function Footer() {
         return () => clearTimeout(timer)
     }, [])
 
+    // noinspection XmlDeprecatedElement
     return (
         <footer className="px-6 py-12 md:py-16 mt-auto transition-all duration-500 ease-in-out" style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(10px)`, WebkitBackdropFilter: `blur(10px)` }}>
             <div className="mx-auto max-w-[1400px]">
@@ -172,7 +174,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="http://www.apache.org/licenses/LICENSE-2.0" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                <Link href="https://www.apache.org/licenses/LICENSE-2.0" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
                                     Apache 2.0 License
                                 </Link>
                             </li>
