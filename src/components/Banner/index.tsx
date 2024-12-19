@@ -1,0 +1,93 @@
+/*
+Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+'use client'
+
+import { XMarkIcon } from '@heroicons/react/20/solid'
+import { useState, useEffect } from 'react'
+
+interface BannerProps {
+    mainTitle?: string;
+    subtitle?: string;
+    buttonText?: string;
+    buttonHref?: string;
+}
+
+export default function Banner({ mainTitle, subtitle, buttonText, buttonHref }: BannerProps) {
+    const [isVisible, setIsVisible] = useState(true)
+    const [isAnimated, setIsAnimated] = useState(false)
+    const [isDisappearing, setIsDisappearing] = useState(false)
+
+    useEffect(() => {
+        const navbar = document.querySelector('header')
+        if (navbar) {
+            const navbarHeight = navbar.offsetHeight
+            document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`)
+        }
+    }, [])
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsAnimated(true), 500)
+        return () => clearTimeout(timer)
+    }, [])
+
+    const handleClose = () => {
+        setIsDisappearing(true)
+        setTimeout(() => setIsVisible(false), 300) // Match this with the transition duration
+    }
+
+    if (!isVisible) return null
+
+    return (
+        <div
+            className="fixed left-1/2 z-40 w-full max-w-[85rem] -translate-x-1/2"
+            style={{ top: 'calc(var(--navbar-height, 0px) + 1.5rem)' }}
+        >
+            <div
+                className={`
+                    flex items-center justify-between gap-x-6 rounded-lg bg-black/2 backdrop-blur-md px-10 py-2.5 
+                    transition-all duration-300 ease-in-out
+                    ${isAnimated && !isDisappearing ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
+                `}
+            >
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <p className="text-sm leading-6 text-white">
+                        {mainTitle && <strong className="font-semibold">{mainTitle}</strong>}
+                        {mainTitle && subtitle && <span className="mx-2">·</span>}
+                        {subtitle}
+                    </p>
+                    {buttonText && buttonHref && (
+                        <a
+                            href={buttonHref}
+                            className="flex-none rounded-full bg-white/10 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-white/20 transition-colors duration-200"
+                        >
+                            {buttonText} <span aria-hidden="true">→</span>
+                        </a>
+                    )}
+                </div>
+                <button
+                    type="button"
+                    className="-m-1.5 flex-none p-1.5 text-white hover:text-white/80 transition-colors duration-200"
+                    onClick={handleClose}
+                    aria-label="Dismiss banner"
+                >
+                    <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                </button>
+            </div>
+        </div>
+    )
+}
+
