@@ -33,6 +33,7 @@ interface CallToActionProps {
     ImageSizing?: string;
 }
 
+// noinspection JSUnusedLocalSymbols
 const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
     (
         { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" },
