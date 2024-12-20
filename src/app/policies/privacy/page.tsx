@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
         <>
             <div className="mt-16 isolate px-6 py-24 sm:py-32 lg:px-8">
                 <div className="mx-auto max-w-4xl px-6 lg:px-8">
-                    <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Privacy Policy</h2>
+                    <h2 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">Privacy Policy</h2>
                     <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
                         Effective Date: December 17th, 2024
                     </p>

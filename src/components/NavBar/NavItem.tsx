@@ -28,7 +28,7 @@ interface NavItemProps {
 
 export const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
     ({ label, href = '#', isOpen, hasDropdown, hasArrow, onClick }, ref) => {
-        const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-colors duration-200 ease-in-out group";
+        const baseClasses = "flex items-center gap-x-1 font-semibold transition-colors duration-200 ease-in-out group";
         const activeClasses = "text-transparent bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text";
         const inactiveClasses = "text-white hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text";
 

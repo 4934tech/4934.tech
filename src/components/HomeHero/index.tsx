@@ -23,6 +23,7 @@ export default function HomeHero() {
 
             <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                    {/*
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                         <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-gray-100/10 hover:bg-gradient-to-tr from-[#32b7b6]/10 to-[#425389]/10 transition-colors duration-200 ease-in-out">
                             Announcing 4934 UltraAgent.{' '}
@@ -32,6 +33,7 @@ export default function HomeHero() {
                             </a>
                         </div>
                     </div>
+                    */}
                     <div className="text-center">
                         <h1 className="text-balance text-5xl font-bold tracking-tight text-white sm:text-7xl">
                             <span
@@ -42,7 +44,7 @@ export default function HomeHero() {
                             Together.
                             {" "}
                             <span
-                                className="bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
+                                className="bg-gradient-to-br from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
                                 Build
                             </span>
                             {" "}
@@ -57,11 +59,11 @@ export default function HomeHero() {
                                 href="https://github.com/4934tech/ultraagent"
                                 className="relative inline-block rounded-md bg-gradient-to-br from-[#1d6a69] to-[#1d243c] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 ease-in-out before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-br before:from-[#32b7b6] before:to-[#425389] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
                             >
-                                <span className="relative">Get started</span>
+                                <span className="relative">Join Us</span>
                             </a>
 
                             <a href="#" className="text-sm/6 font-semibold text-white">
-                                Learn more <span aria-hidden="true">→</span>
+                                Explore Projects <span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
