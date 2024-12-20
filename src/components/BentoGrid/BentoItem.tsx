@@ -14,59 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/* Example Usage:
-<BentoGrid
-              heading="Deploy faster"
-              subheading="Everything you need to deploy your app"
-              items={{
-                col1: {
-                  title: "Mobile friendly",
-                  description: "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-                  imageSrc: "https://tailwindui.com/plus/img/component-images/bento-03-mobile-friendly.png",
-                  imageAlt: "Mobile friendly illustration"
-                },
-                  col2: {
-                  title: "Performance",
-                  description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.",
-                  imageSrc: "https://tailwindui.com/plus/img/component-images/bento-03-performance.png",
-                },
-                  col4: {
-                    title: "Powerful APIs",
-                    description: "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.",
-                    codeSnippet: `
-function NotificationSetting({ title, enabled, setEnabled }) {
-  return (
-    <div className="flex items-center justify-between">
-      <div className="flex flex-col">
-        <span className="text-sm font-medium text-gray-900">{title}</span>
-        <span className="text-sm text-gray-500">
-          {enabled ? 'Enabled' : 'Disabled'}
-        </span>
-      </div>
-      <Switch
-        checked={enabled}
-        onChange={setEnabled}
-        className={\`\${
-          enabled ? 'bg-indigo-600' : 'bg-gray-200'
-        } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2\`}
-      >
-        <span className="sr-only">Use setting</span>
-        <span
-          aria-hidden="true"
-          className={\`\${
-            enabled ? 'translate-x-5' : 'translate-x-0'
-          } pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out\`}
-        />
-      </Switch>
-    </div>
-  )
-}
-                        `
-                  }
-              }}
-          />
- */
-
 import { BentoItemProps } from '@/types/bentogrid';
 
 export default function BentoItem({
