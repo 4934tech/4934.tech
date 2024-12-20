@@ -20,7 +20,7 @@ import {AccessibilityIcon, CodeIcon} from "lucide-react";
 export default function Winter2024() {
     return (
         <>
-            <ContentSection tagline={"Sunday, December 15th"} title={"Winter 2024 Hackathon"} description={""} content={"The annual 4934 Winter Hackathon is an online, single-day hackathon targeted towards beginners."} additionalContent={"This hackathon ended, with 2 submissions but ~20 entries."} features={[{icon: CodeIcon, title: "Python-based", description: "This hackathon is going to be in Python."}, {icon: AccessibilityIcon, title: "For beginners", description: "This hackathon was built for beginners to level-up their coding."}]} />
+            <ContentSection imageSrc={""} imageAlt={"test"} tagline={"Sunday, December 15th"} title={"Winter 2024 Hackathon"} description={""} content={"The annual 4934 Winter Hackathon is an online, single-day hackathon targeted towards beginners."} additionalContent={"This hackathon ended, with 2 submissions but ~20 entries."} features={[{icon: CodeIcon, title: "Python-based", description: "This hackathon is going to be in Python."}, {icon: AccessibilityIcon, title: "For beginners", description: "This hackathon was built for beginners to level-up their coding."}]} />
         </>
     );
 }

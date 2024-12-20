@@ -34,6 +34,8 @@ interface ContentSectionProps {
     additionalContent?: string
     finalTitle?: string
     finalContent?: string
+    centered?: boolean
+    imagePosition?: 'default' | 'bottom' // New prop for image position
 }
 
 export default function ContentSection({
@@ -47,16 +49,28 @@ export default function ContentSection({
                                            additionalContent = "",
                                            finalTitle = "",
                                            finalContent = "",
+                                           centered = false,
+                                           imagePosition = 'default', // Default to 'default' for backward compatibility
                                        }: ContentSectionProps) {
     return (
         <div
-            className="relative overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+            className={`relative overflow-hidden bg-transparent px-6 py-24 sm:py-32 ${
+                centered ? 'lg:overflow-visible' : 'lg:overflow-visible lg:px-0'
+            }`}
             style={{ background: 'none' }}
         >
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-                <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div className="lg:pr-4">
-                        <div className="lg:max-w-lg">
+            <div className={`mx-auto ${
+                centered
+                    ? 'max-w-7xl flex flex-col items-center text-center'
+                    : 'grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10'
+            }`}>
+                <div className={`${
+                    centered
+                        ? 'w-full max-w-3xl'
+                        : 'lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'
+                }`}>
+                    <div className={centered ? '' : 'lg:pr-4'}>
+                        <div className={centered ? 'max-w-3xl mx-auto' : 'lg:max-w-lg'}>
                             {tagline && (
                                 <p className="text-base/7 font-semibold text-transparent bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text">
                                     {tagline}
@@ -74,22 +88,43 @@ export default function ContentSection({
                     </div>
                 </div>
                 {imageSrc && (
-                    <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-                        <Image
-                            alt={imageAlt || ""}
-                            src={imageSrc}
-                            width={1824}
-                            height={1080}
-                            className="w-[48rem] max-w-none rounded-xl bg-white shadow-xl ring-1 bg-clip-border/10 sm:w-[57rem]"
-                        />
+                    <div className={`${
+                        centered
+                            ? imagePosition === 'bottom'
+                                ? 'mt-16 w-full max-w-3xl relative order-last'
+                                : 'mt-16 w-full max-w-3xl relative'
+                            : '-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'
+                    }`}>
+                        <div className={centered ? 'relative w-full aspect-[16/9]' : ''}>
+                            <Image
+                                alt={imageAlt || ""}
+                                src={imageSrc}
+                                width={1824}
+                                height={1080}
+                                className={`${
+                                    centered
+                                        ? 'w-full h-full object-cover rounded-xl'
+                                        : 'w-[48rem] max-w-none rounded-xl bg-white shadow-xl ring-1 bg-clip-border/10 sm:w-[57rem]'
+                                }`}
+                            />
+                            {centered && (
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75" />
+                            )}
+                        </div>
                     </div>
                 )}
-                <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div className="lg:pr-4">
-                        <div className="max-w-xl text-lg text-pretty text-gray-300 lg:max-w-lg">
+                <div className={`${
+                    centered
+                        ? 'w-full max-w-3xl mt-16'
+                        : 'lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'
+                }`}>
+                    <div className={centered ? '' : 'lg:pr-4'}>
+                        <div className={`${
+                            centered ? 'text-center' : 'max-w-xl lg:max-w-lg'
+                        } text-lg text-pretty text-gray-300`}>
                             {content && <p className={`text-gray-400 text-pretty font-medium`}>{content}</p>}
                             {features.length > 0 && (
-                                <ul role="list" className={`${content ? 'mt-8' : ''} space-y-8 text-pretty text-gray-400`}>
+                                <ul role="list" className={`${content ? 'mt-8' : ''} space-y-8 text-pretty text-gray-400 ${centered ? 'inline-block text-left' : ''}`}>
                                     {features.map((feature, index) => (
                                         <li key={index} className="flex gap-x-3">
                                             <feature.icon aria-hidden="true" className="mt-1 size-5 flex-none text-[#32b7b6]" />
