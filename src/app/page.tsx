@@ -1,6 +1,6 @@
 import HomeHero from "@/components/HomeHero";
 import CallToAction from "@/components/CallToAction";
-import EmailSignup from "@/components/EmailSignup";
+/* import EmailSignup from "@/components/EmailSignup"; */ // Not finished yet
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
                   ImageWidth={800}
                   ImageHeight={800}
             />
-          <EmailSignup />
+          {/* <EmailSignup /> */}
       </>
   );
 }
