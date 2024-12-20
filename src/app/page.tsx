@@ -1,6 +1,5 @@
 import HomeHero from "@/components/HomeHero";
 import CallToAction from "@/components/CallToAction";
-import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
                   ImageWidth={800}
                   ImageHeight={800}
             />
-            <Testimonials />
       </>
   );
 }

@@ -100,7 +100,7 @@ export default function Testimonials() {
                 <div className="grid grid-cols-1 gap-6 md:hidden">
                     {mobileTestimonials.map((testimonial, index) => (
                         <div key={index}>
-                            <blockquote className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-8 min-h-[280px]">
+                            <blockquote className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-6">
                                 <p className="text-gray-300 mb-4">&quot;{testimonial.quote}&quot;</p>
                                 <div className="flex items-center">
                                     <Image
@@ -127,7 +127,7 @@ export default function Testimonials() {
                             key={index}
                             className={index === 1 ? 'md:col-span-2' : ''}
                         >
-                            <blockquote className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-8 min-h-[280px]">
+                            <blockquote className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-6">
                                 <p className="text-gray-300 mb-4">&quot;{testimonial.quote}&quot;</p>
                                 <div className="flex items-center">
                                     <Image
@@ -152,7 +152,7 @@ export default function Testimonials() {
                     {/* First column */}
                     <div className="space-y-8">
                         {desktopTestimonials.slice(0, 3).map((testimonial, index) => (
-                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-8 min-h-[280px]">
+                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-6">
                                 <p className="text-gray-300 mb-4">&quot;{testimonial.quote}&quot;</p>
                                 <div className="flex items-center">
                                     <Image
@@ -172,9 +172,9 @@ export default function Testimonials() {
                     </div>
 
                     {/* Middle columns (larger testimonials) */}
-                    <div className="col-span-1 space-y-8">
+                    <div className="col-span-2 space-y-8">
                         {desktopTestimonials.slice(3, 6).map((testimonial, index) => (
-                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-16 min-h-[320px]">
+                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-14">
                                 <p className="text-gray-300 mb-4 text-lg">&quot;{testimonial.quote}&quot;</p>
                                 <div className="flex items-center">
                                     <Image
@@ -196,7 +196,7 @@ export default function Testimonials() {
                     {/* Last column */}
                     <div className="space-y-8">
                         {desktopTestimonials.slice(6, 9).map((testimonial, index) => (
-                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-8 min-h-[280px]">
+                            <blockquote key={index} className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-6">
                                 <p className="text-gray-300 mb-4">&quot;{testimonial.quote}&quot;</p>
                                 <div className="flex items-center">
                                     <Image
