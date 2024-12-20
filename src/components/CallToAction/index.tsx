@@ -14,8 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { forwardRef } from 'react';
+'use client'
+
+import { forwardRef, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion'
 
 interface CallToActionProps {
     Tagline: string;
@@ -32,13 +35,21 @@ interface CallToActionProps {
 
 const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
     (
-        { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" },
-        ref
+        { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" }
     ) => {
+        const internalRef = useRef(null)
+        const isInView = useInView(internalRef, { once: true, margin: "-100px" })
+
         return (
-            <div ref={ref}>
+            <motion.div
+                ref={internalRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+            >
                 <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-                    <div style={{backdropFilter: `blur(10px)`, WebkitBackdropFilter: `blur(10px)`}} className="relative isolate overflow-hidden bg-black/60 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                    <div style={{backdropFilter: `blur(10px)`, WebkitBackdropFilter: `blur(10px)`}}
+                         className="relative isolate overflow-hidden bg-black/40 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                         <svg
                             viewBox="0 0 1024 1024"
                             aria-hidden="true"
@@ -53,8 +64,8 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
                             />
                             <defs>
                                 <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                                    <stop stopColor={GradientStartColor} />
-                                    <stop offset={1} stopColor={GradientStopColor} />
+                                    <stop stopColor={GradientStartColor}/>
+                                    <stop offset={1} stopColor={GradientStopColor}/>
                                 </radialGradient>
                             </defs>
                         </svg>
@@ -85,7 +96,7 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         );
     }
 );
@@ -93,3 +104,4 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
 CallToAction.displayName = 'CallToAction';
 
 export default CallToAction;
+
