@@ -38,155 +38,163 @@ export default function Footer() {
 
     // noinspection XmlDeprecatedElement
     return (
-        <footer className="px-6 py-12 md:py-16 mt-auto transition-all duration-500 ease-in-out" style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})`, backdropFilter: `blur(10px)`, WebkitBackdropFilter: `blur(10px)` }}>
-            <div className="mx-auto max-w-[1400px]">
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
-                    {/* Logo and Description Column */}
-                    <div className="col-span-full lg:col-span-4">
-                        <div className="text-blue-400 mb-6">
-                            <Logo />
+        <footer className="px-6 py-8 mt-auto">
+            <div className="mx-auto max-w-[1400px] sm:rounded-3xl transition-all duration-500 ease-in-out"
+                 style={{
+                     backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+                     backdropFilter: `blur(10px)`,
+                     WebkitBackdropFilter: `blur(10px)`,
+                     boxShadow: `0 4px 6px -1px rgba(0, 0, 0, ${opacity * 0.1}), 0 2px 4px -1px rgba(0, 0, 0, ${opacity * 0.06})`
+                 }}>
+                <div className="px-6 py-12 md:py-16">
+                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
+                        {/* Logo and Description Column */}
+                        <div className="col-span-full lg:col-span-4">
+                            <div className="text-blue-400 mb-6">
+                                <Logo />
+                            </div>
+                            <p className="text-slate-300 text-sm leading-relaxed max-w-xs">
+                                A transparent, open source, friendly community organization for makers.
+                            </p>
+                            <div className="mt-6 flex gap-6">
+                                <Link href="https://facebook.com/4934tech" className="group">
+                                    <Facebook className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">Facebook</span>
+                                </Link>
+                                <Link href="https://twitter.com/4934tech" className="group">
+                                    <Twitter className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">Twitter</span>
+                                </Link>
+                                <Link href="https://4934tech/4934tech" className="group">
+                                    <Github className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">GitHub</span>
+                                </Link>
+                                <Link href="#" className="group">
+                                    <Youtube className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">YouTube</span>
+                                </Link>
+                                <Link href="mailto:4934@4934.tech" className="group">
+                                    <Mail className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">Email</span>
+                                </Link>
+                            </div>
                         </div>
-                        <p className="text-slate-300 text-sm leading-relaxed max-w-xs">
-                            A transparent, open source, friendly community organization for makers.
-                        </p>
-                        <div className="mt-6 flex gap-6">
-                            <Link href="https://facebook.com/4934tech" className="group">
-                                <Facebook className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">Facebook</span>
-                            </Link>
-                            <Link href="https://twitter.com/4934tech" className="group">
-                                <Twitter className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">Twitter</span>
-                            </Link>
-                            <Link href="https://4934tech/4934tech" className="group">
-                                <Github className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">GitHub</span>
-                            </Link>
-                            <Link href="#" className="group">
-                                <Youtube className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">YouTube</span>
-                            </Link>
-                            <Link href="mailto:4934@4934.tech" className="group">
-                                <Mail className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
-                                <span className="sr-only">Email</span>
-                            </Link>
+
+                        {/* Solutions Column */}
+                        <div className="sm:col-span-1 lg:col-span-2 lg:col-start-5">
+                            <h3 className="text-sm font-semibold text-white">Solutions</h3>
+                            <ul className="mt-4 space-y-3">
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Marketing
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Analytics
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Automation
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Commerce
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Insights
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Support Column */}
+                        <div className="sm:col-span-1 lg:col-span-2">
+                            <h3 className="text-sm font-semibold text-white">Support</h3>
+                            <ul className="mt-4 space-y-3">
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Submit ticket
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Documentation
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Guides
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Community Column */}
+                        <div className="sm:col-span-1 lg:col-span-2">
+                            <h3 className="text-sm font-semibold text-white">Community</h3>
+                            <ul className="mt-4 space-y-3">
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        About
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Blog
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Join Us
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Press
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Legal Column */}
+                        <div className="sm:col-span-1 lg:col-span-2">
+                            <h3 className="text-sm font-semibold text-white">Legal</h3>
+                            <ul className="mt-4 space-y-3">
+                                <li>
+                                    <Link href="https://4934.tech/policies/tos" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Terms of Service
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="https://4934.tech/policies/privacy" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Privacy Policy
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="https://4934.tech/policies/copyright" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Copyright Information
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="https://www.apache.org/licenses/LICENSE-2.0" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
+                                        Apache 2.0 License
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    {/* Solutions Column */}
-                    <div className="sm:col-span-1 lg:col-span-2 lg:col-start-5">
-                        <h3 className="text-sm font-semibold text-white">Solutions</h3>
-                        <ul className="mt-4 space-y-3">
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Marketing
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Analytics
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Automation
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Commerce
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Insights
-                                </Link>
-                            </li>
-                        </ul>
+                    {/* Copyright */}
+                    <div className="mt-16 border-t border-slate-800 pt-8">
+                        <Link href="https://4934.tech/policies/copyright" className={`${baseClasses} ${hoverClasses} text-sm text-slate-400`}>
+                            © {new Date().getFullYear()} 4934 Tech All rights reserved.
+                        </Link>
                     </div>
-
-                    {/* Support Column */}
-                    <div className="sm:col-span-1 lg:col-span-2">
-                        <h3 className="text-sm font-semibold text-white">Support</h3>
-                        <ul className="mt-4 space-y-3">
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Submit ticket
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Documentation
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Guides
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Community Column */}
-                    <div className="sm:col-span-1 lg:col-span-2">
-                        <h3 className="text-sm font-semibold text-white">Community</h3>
-                        <ul className="mt-4 space-y-3">
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Blog
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Join Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Press
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Legal Column */}
-                    <div className="sm:col-span-1 lg:col-span-2">
-                        <h3 className="text-sm font-semibold text-white">Legal</h3>
-                        <ul className="mt-4 space-y-3">
-                            <li>
-                                <Link href="https://4934.tech/policies/tos" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Terms of Service
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="https://4934.tech/policies/privacy" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="https://4934.tech/policies/copyright" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Copyright Information
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.apache.org/licenses/LICENSE-2.0" className={`${baseClasses} ${hoverClasses} text-slate-400`}>
-                                    Apache 2.0 License
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Copyright */}
-                <div className="mt-16 border-t border-slate-800 pt-8">
-                    <Link href="https://4934.tech/policies/copyright" className={`${baseClasses} ${hoverClasses} text-sm text-slate-400`}>
-                        © {new Date().getFullYear()} 4934 Tech All rights reserved.
-                    </Link>
                 </div>
             </div>
         </footer>
