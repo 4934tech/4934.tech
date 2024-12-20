@@ -1,19 +1,3 @@
-/*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
 'use client'
 
 import { forwardRef, useRef } from 'react';
@@ -38,15 +22,19 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
         { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" },
         ref
     ) => {
-        const internalRef = useRef(null)
+        const internalRef = useRef<HTMLDivElement>(null)
         const isInView = useInView(internalRef, { once: true, margin: "-100px" })
-
-        // noinspection BadExpressionStatementJS
-        ref; // If removed, building will FAIL! This is to suppress the unused variable warning
 
         return (
             <motion.div
-                ref={internalRef}
+                ref={(node) => {
+                    internalRef.current = node;
+                    if (typeof ref === 'function') {
+                        ref(node);
+                    } else if (ref) {
+                        ref.current = node;
+                    }
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
@@ -95,7 +83,7 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
                                 src={ImageSource}
                                 width={ImageWidth}
                                 height={ImageHeight}
-                                className={`absolute left-0 top-0 w-${ImageSizing} max-w-none rounded-md bg-white/5 ring-1 ring-white/10`}
+                                className={`absolute left-0 top-0 w-[${ImageSizing}] max-w-none rounded-md bg-white/5 ring-1 ring-white/10`}
                             />
                         </div>
                     </div>
