@@ -18,6 +18,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 interface HeaderSectionProps {
+    Tagline?: string;
     Name: string;
     Description?: string;
     Stat1Name?: string;
@@ -39,6 +40,7 @@ interface HeaderSectionProps {
 }
 
 const HeaderSection: FC<HeaderSectionProps> = ({
+                                                   Tagline,
                                                    Name,
                                                    Description,
                                                    Stat1Name,
@@ -76,7 +78,12 @@ const HeaderSection: FC<HeaderSectionProps> = ({
         <section className="py-24 sm:py-32 mt-16">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">{Name}</h2>
+                    {Tagline && (
+                        <p className="text-base/7 font-semibold text-transparent bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text">
+                            {Tagline}
+                        </p>
+                    )}
+                    <h2 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">{Name}</h2>
                     {Description && (
                         <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
                             {Description}
@@ -87,7 +94,7 @@ const HeaderSection: FC<HeaderSectionProps> = ({
                     {Links.length > 0 && (
                         <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
                             {Links.map((link) => (
-                                <Link key={link.name} href={link.href || '#'}>
+                                <Link className={"text-white hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text ease-in-out duration-300"} key={link.name} href={link.href || '#'}>
                                     {link.name} <span aria-hidden="true">&rarr;</span>
                                 </Link>
                             ))}
