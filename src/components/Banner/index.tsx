@@ -54,7 +54,7 @@ export default function Banner({ mainTitle, subtitle, buttonText, buttonHref }: 
     return (
         <div
             className="fixed left-1/2 z-40 w-full max-w-7xl -translate-x-1/2"
-            style={{ top: 'calc(var(--navbar-height, 0px) + 1.5rem)' }}
+            style={{ top: 'calc(var(--navbar-height, 0px)' }}
         >
             <div
                 className={`
