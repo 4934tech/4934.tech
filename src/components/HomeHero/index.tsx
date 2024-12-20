@@ -33,24 +33,24 @@ export default function HomeHero() {
                         </div>
                     </div>
                     <div className="text-center">
-                        <h1 className="text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+                        <h1 className="text-balance text-5xl font-bold tracking-tight text-white sm:text-7xl">
                             <span
                                 className="bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
-                                Control
+                                Innovate
                             </span>
                             {" "}
-                            Everything.
+                            Together.
                             {" "}
                             <span
                                 className="bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
-                                Automate
+                                Build
                             </span>
                             {" "}
-                            Anything.
+                            the Future.
                         </h1>
 
                         <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-                            4934 UltraAgent is a powerful AI agent to tightly integrate with your existing systems. It&#39;s designed to be a seamless extension of your life, with power to control whatever you want it to.
+                            Join our community of developers, designers, and innovators working together to create cutting-edge open source technology that pushes the boundaries of what&apos;s possible.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
