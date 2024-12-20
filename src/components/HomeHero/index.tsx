@@ -34,13 +34,19 @@ export default function HomeHero() {
                     </div>
                     <div className="text-center">
                         <h1 className="text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-                            AI with{" "}
                             <span
                                 className="bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
-                                real world
+                                Control
                             </span>
                             {" "}
-                            capabilities.
+                            Everything.
+                            {" "}
+                            <span
+                                className="bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
+                                Automate
+                            </span>
+                            {" "}
+                            Anything.
                         </h1>
 
                         <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
