@@ -36,7 +36,6 @@ interface CallToActionProps {
 const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
     (
         { Tagline, Description, ButtonText, ButtonLink, GradientStartColor = "#32b7b6", GradientStopColor = "#425389", ImageSource, ImageWidth, ImageHeight, ImageSizing = "60rem" },
-        ref
     ) => {
         const internalRef = useRef(null)
         const isInView = useInView(internalRef, { once: true, margin: "-100px" })

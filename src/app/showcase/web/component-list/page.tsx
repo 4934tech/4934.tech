@@ -14,16 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import HeaderSection from "@/components/HeaderSection";
+
+/* TODO: Implement & show off these components.
 import Banner from '@/components/Banner';
 import BentoGrid from '@/components/BentoGrid';
 import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import ContentSection from "@/components/ContentSection";
 import EmailSignup from "@/components/EmailSignup";
-import HeaderSection from "@/components/HeaderSection";
 import HomeHero from "@/components/HomeHero";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
+ */
 
 export default function WebComponentListShowcase() {
     return (
