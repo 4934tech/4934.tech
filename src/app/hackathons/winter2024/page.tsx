@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import ContentSection from "@/components/ContentSection";
-import { ArrowUpIcon, CodeIcon, TrophyIcon, UsersIcon, CalendarIcon } from 'lucide-react';
+import { ArrowUpIcon, CodeIcon } from 'lucide-react';
 
 export default function Winter2024() {
     return (
