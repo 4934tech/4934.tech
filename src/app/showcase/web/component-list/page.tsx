@@ -25,7 +25,7 @@ import EmailSignup from "@/components/EmailSignup";
 import BentoGrid from '@/components/BentoGrid';
 import HomeHero from "@/components/HomeHero";
 import Stats from "@/components/Stats";
- */
+*/
 
 export default function WebComponentListShowcase() {
     return (
