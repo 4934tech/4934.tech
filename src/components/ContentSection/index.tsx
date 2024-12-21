@@ -76,7 +76,7 @@ export default function ContentSection({
                                     {tagline}
                                 </p>
                             )}
-                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl`}>
+                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl`}>
                                 {title}
                             </h1>
                             {description && (

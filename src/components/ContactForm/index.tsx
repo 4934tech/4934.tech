@@ -22,7 +22,11 @@ import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitContactForm } from '@/lib/actions/contact'
 
-export default function ContactForm() {
+interface ContactFormProps {
+    BoldHeader?: boolean;
+}
+
+export default function ContactForm({ BoldHeader }: ContactFormProps) {
     const [agreed, setAgreed] = useState(false)
     const [state, formAction] = useActionState(submitContactForm, { success: false, errors: {} })
     const { pending } = useFormStatus()
@@ -30,8 +34,8 @@ export default function ContactForm() {
     return (
         <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contact 4934</h2>
-                <p className="mt-2 text-lg/8 text-gray-400">If you would like to get in touch with us, please fill out this form.</p>
+                <h2 className={`text-balance text-4xl ${BoldHeader ? 'font-bold' : 'font-semibold'} tracking-tight text-white sm:text-5xl`}>Contact 4934</h2>
+                <p className="mt-2 text-lg/8 font-semibold text-gray-400">If you would like to get in touch with us, please fill out this form.</p>
             </div>
             <form action={formAction} className="mx-auto mt-16 max-w-xl sm:mt-20">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
