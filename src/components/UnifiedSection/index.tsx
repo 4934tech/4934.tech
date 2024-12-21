@@ -17,6 +17,7 @@ limitations under the License.
 import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {bold} from "next/dist/lib/picocolors";
 
 interface Feature {
     icon: ReactNode;
@@ -39,6 +40,7 @@ interface UnifiedSectionProps {
     rightAligned?: boolean;
     imagePosition?: 'default' | 'bottom';
     topOfPage?: boolean;
+    boldTitle?: boolean;
     stats?: Array<{ name: string; value: string }>;
     links?: Array<{ name: string; href: string }>;
 }
@@ -58,6 +60,7 @@ const UnifiedSection: FC<UnifiedSectionProps> = ({
                                                      rightAligned = false,
                                                      imagePosition = 'default',
                                                      topOfPage = true,
+                                                     boldTitle = true,
                                                      stats = [],
                                                      links = [],
                                                  }) => {
@@ -89,7 +92,7 @@ const UnifiedSection: FC<UnifiedSectionProps> = ({
                                     {tagline}
                                 </p>
                             )}
-                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty ${topOfPage ? 'text-5xl sm:text-7xl' : 'text-4xl sm:text-5xl'} font-bold tracking-tight text-white`}>
+                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty ${topOfPage ? 'text-5xl sm:text-7xl' : 'text-4xl sm:text-5xl'} ${boldTitle ? 'font-bold' : 'font-semibold'} tracking-tight text-white`}>
                                 {title}
                             </h1>
                             {description && (
