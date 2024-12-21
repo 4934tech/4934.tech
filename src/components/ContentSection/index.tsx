@@ -85,6 +85,60 @@ export default function ContentSection({
                                 </p>
                             )}
                         </div>
+                        <div className={`${
+                            centered ? 'text-center' : 'max-w-xl lg:max-w-lg'
+                        } text-lg text-pretty text-gray-300`}>
+                            {content && (
+                                <div className={`mt-8 text-gray-400 text-pretty font-medium`}>
+                                    {content.split('\n').map((paragraph, index) => (
+                                        <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                                            {paragraph}
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
+                            {features.length > 0 && (
+                                <ul role="list"
+                                    className={`${content ? 'mt-8' : ''} space-y-8 text-pretty text-gray-400 ${centered ? 'inline-block text-left' : ''}`}>
+                                    {features.map((feature, index) => (
+                                        <li key={index} className="flex gap-x-3">
+                                            <feature.icon aria-hidden="true"
+                                                          className="mt-1 size-5 flex-none text-[#32b7b6]"/>
+                                            <span>
+                                                <strong
+                                                    className="font-semibold bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
+                                                    {feature.title}
+                                                </strong>{' '}
+                                                {feature.description}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            {additionalContent && (
+                                <div className={`text-gray-400 text-pretty font-medium ${features.length > 0 ? 'mt-8' : ''}`}>
+                                    {additionalContent.split('\n').map((paragraph, index) => (
+                                        <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                                            {paragraph}
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
+                            {finalTitle && (
+                                <h2 className={`${additionalContent ? 'mt-16' : 'mt-8'} text-2xl font-semibold tracking-tight text-white`}>
+                                    {finalTitle}
+                                </h2>
+                            )}
+                            {finalContent && (
+                                <div className="mt-6">
+                                    {finalContent.split('\n').map((paragraph, index) => (
+                                        <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                                            {paragraph}
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
                 {imageSrc && (
@@ -92,7 +146,7 @@ export default function ContentSection({
                         centered
                             ? imagePosition === 'bottom'
                                 ? 'mt-16 w-full max-w-3xl relative order-last'
-                                : 'mt-16 w-full max-w-3xl relative'
+                                : 'mt-16 w-full max-w-6xl relative'
                             : '-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'
                     }`}>
                         <div className={centered ? 'relative w-full aspect-[16/9]' : ''}>
@@ -108,46 +162,12 @@ export default function ContentSection({
                                 }`}
                             />
                             {centered && (
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75" />
+                                <div
+                                    className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"/>
                             )}
                         </div>
                     </div>
                 )}
-                <div className={`${
-                    centered
-                        ? 'w-full max-w-3xl mt-16'
-                        : 'lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'
-                }`}>
-                    <div className={centered ? '' : 'lg:pr-4'}>
-                        <div className={`${
-                            centered ? 'text-center' : 'max-w-xl lg:max-w-lg'
-                        } text-lg text-pretty text-gray-300`}>
-                            {content && <p className={`text-gray-400 text-pretty font-medium`}>{content}</p>}
-                            {features.length > 0 && (
-                                <ul role="list" className={`${content ? 'mt-8' : ''} space-y-8 text-pretty text-gray-400 ${centered ? 'inline-block text-left' : ''}`}>
-                                    {features.map((feature, index) => (
-                                        <li key={index} className="flex gap-x-3">
-                                            <feature.icon aria-hidden="true" className="mt-1 size-5 flex-none text-[#32b7b6]" />
-                                            <span>
-                                                <strong className="font-semibold bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
-                                                    {feature.title}
-                                                </strong>{' '}
-                                                {feature.description}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                            {additionalContent && <p className={`text-gray-400 text-pretty font-medium ${features.length > 0 ? 'mt-8' : ''}`}>{additionalContent}</p>}
-                            {finalTitle && (
-                                <h2 className={`${additionalContent ? 'mt-16' : 'mt-8'} text-2xl font-semibold tracking-tight text-white`}>
-                                    {finalTitle}
-                                </h2>
-                            )}
-                            {finalContent && <p className="mt-6">{finalContent}</p>}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     )
