@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+// noinspection SpellCheckingInspection
 const nextConfig: NextConfig = {
     images: {
         remotePatterns: [
