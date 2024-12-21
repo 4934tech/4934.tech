@@ -58,7 +58,7 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-black/30" />
+                    <div className="fixed inset-0 bg-gray-700/5" />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-hidden">
@@ -78,7 +78,7 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                                     style={{
                                         backdropFilter: `blur(${blur}px)`,
                                         WebkitBackdropFilter: `blur(${blur}px)`,
-                                        backgroundColor: `rgba(0, 0, 0, ${opacity + 0.6})`
+                                        backgroundColor: `rgba(50, 50, 50, ${opacity + 0.5})`,
                                     }}
                                 >
                                     <div className="flex h-full flex-col overflow-y-scroll bg-transparent shadow-xl">
@@ -100,24 +100,24 @@ export function MobileMenu({ isOpen, onClose, solutions, solutionsCTA, hackathon
                                                 <DisclosureMenu label="Solutions" items={solutionsWithCTA}/>
                                                 <a
                                                     href="#"
-                                                    className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
+                                                    className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-white/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                                 >
                                                     Gallery
                                                 </a>
                                                 <DisclosureMenu label="Hackathons" items={hackathonsWithCTA}/>
                                                 <a
                                                     href="#"
-                                                    className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
+                                                    className="block rounded-lg py-2 text-base/7 font-semibold text-white hover:bg-white/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                                 >
                                                     About
                                                 </a>
                                                 <DisclosureMenu label="Projects" items={projects}/>
                                             </div>
                                         </div>
-                                        <div className="border-t border-gray-700/50 px-6 py-6">
+                                        <div className="border-t border-gray-400/50 px-6 py-6">
                                             <a
                                                 href="#"
-                                                className="block rounded-lg py-2.5 text-base/7 font-semibold text-white hover:bg-gray-900/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
+                                                className="block rounded-lg py-2.5 text-base/7 font-semibold text-white hover:bg-white/50 hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text transition-colors duration-200 ease-in-out"
                                             >
                                                 Log in
                                             </a>
