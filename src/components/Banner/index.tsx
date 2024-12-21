@@ -24,20 +24,23 @@ interface BannerProps {
     subtitle?: string;
     buttonText?: string;
     buttonHref?: string;
+    showCased?: boolean;
 }
 
-export default function Banner({ mainTitle, subtitle, buttonText, buttonHref }: BannerProps) {
+export default function Banner({ mainTitle, subtitle, buttonText, buttonHref, showCased = false }: BannerProps) {
     const [isVisible, setIsVisible] = useState(true)
     const [isAnimated, setIsAnimated] = useState(false)
     const [isDisappearing, setIsDisappearing] = useState(false)
 
     useEffect(() => {
-        const navbar = document.querySelector('header')
-        if (navbar) {
-            const navbarHeight = navbar.offsetHeight
-            document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`)
+        if (!showCased) {
+            const navbar = document.querySelector('header')
+            if (navbar) {
+                const navbarHeight = navbar.offsetHeight
+                document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`)
+            }
         }
-    }, [])
+    }, [showCased])
 
     useEffect(() => {
         const timer = setTimeout(() => setIsAnimated(true), 500)
@@ -51,42 +54,40 @@ export default function Banner({ mainTitle, subtitle, buttonText, buttonHref }: 
 
     if (!isVisible) return null
 
+    const bannerClasses = `
+        flex items-center justify-between gap-x-6 rounded-lg bg-black/40 backdrop-blur-md px-10 py-2.5 
+        transition-all duration-300 ease-in-out
+        ${isAnimated && !isDisappearing ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
+        ${showCased ? 'w-full max-w-7xl mx-auto' : 'fixed left-1/2 z-40 w-full max-w-7xl transform -translate-x-1/2'}
+    `
+
+    const bannerStyle = showCased ? {} : { top: 'calc(var(--navbar-height, 0px))' }
+
     return (
-        <div
-            className="fixed left-1/2 z-40 w-full max-w-7xl -translate-x-1/2"
-            style={{ top: 'calc(var(--navbar-height, 0px)' }}
-        >
-            <div
-                className={`
-                    flex items-center justify-between gap-x-6 rounded-lg bg-black/40 backdrop-blur-md px-10 py-2.5 
-                    transition-all duration-300 ease-in-out
-                    ${isAnimated && !isDisappearing ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
-                `}
-            >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <p className="text-sm leading-6 text-white">
-                        {mainTitle && <strong className="font-semibold">{mainTitle}</strong>}
-                        {mainTitle && subtitle && <span className="mx-2">·</span>}
-                        {subtitle}
-                    </p>
-                    {buttonText && buttonHref && (
-                        <a
-                            href={buttonHref}
-                            className="flex-none rounded-full bg-white/10 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-white/20 transition-colors duration-200"
-                        >
-                            {buttonText} <span aria-hidden="true">→</span>
-                        </a>
-                    )}
-                </div>
-                <button
-                    type="button"
-                    className="-m-1.5 flex-none p-1.5 text-white hover:text-white/80 transition-colors duration-200"
-                    onClick={handleClose}
-                    aria-label="Dismiss banner"
-                >
-                    <XMarkIcon className="h-5 w-5" aria-hidden="true" />
-                </button>
+        <div className={bannerClasses} style={bannerStyle}>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p className="text-sm leading-6 text-white">
+                    {mainTitle && <strong className="font-semibold">{mainTitle}</strong>}
+                    {mainTitle && subtitle && <span className="mx-2">·</span>}
+                    {subtitle}
+                </p>
+                {buttonText && buttonHref && (
+                    <a
+                        href={buttonHref}
+                        className="flex-none rounded-full bg-white/10 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-white/20 transition-colors duration-200"
+                    >
+                        {buttonText} <span aria-hidden="true">→</span>
+                    </a>
+                )}
             </div>
+            <button
+                type="button"
+                className="-m-1.5 flex-none p-1.5 text-white hover:text-white/80 transition-colors duration-200"
+                onClick={handleClose}
+                aria-label="Dismiss banner"
+            >
+                <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+            </button>
         </div>
     )
 }
