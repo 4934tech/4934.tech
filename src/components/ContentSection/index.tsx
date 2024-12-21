@@ -36,6 +36,7 @@ interface ContentSectionProps {
     finalContent?: string
     centered?: boolean
     imagePosition?: 'default' | 'bottom' // New prop for image position
+    topOfPage?: boolean
 }
 
 export default function ContentSection({
@@ -50,7 +51,8 @@ export default function ContentSection({
                                            finalTitle = "",
                                            finalContent = "",
                                            centered = false,
-                                           imagePosition = 'default', // Default to 'default' for backward compatibility
+                                           imagePosition = 'default',
+                                           topOfPage = false
                                        }: ContentSectionProps) {
     return (
         <div
@@ -76,11 +78,11 @@ export default function ContentSection({
                                     {tagline}
                                 </p>
                             )}
-                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl`}>
+                            <h1 className={`${tagline ? 'mt-2' : ''} text-pretty ${topOfPage ? 'text-5xl sm:text-7xl' : 'text-4xl sm:text-5xl'} font-bold tracking-tight text-white`}>
                                 {title}
                             </h1>
                             {description && (
-                                <p className="mt-6 text-xl/8 text-gray-400 text-pretty font-medium">
+                                <p className="mt-8 text-xl/8 text-gray-400 text-pretty font-medium">
                                     {description}
                                 </p>
                             )}

@@ -38,6 +38,7 @@ interface HeaderSectionProps {
     Link3Value?: string;
     Link4Value?: string;
     centered?: boolean; // New prop for centering option
+    topOfPage?: boolean;
 }
 
 const HeaderSection: FC<HeaderSectionProps> = ({
@@ -61,6 +62,7 @@ const HeaderSection: FC<HeaderSectionProps> = ({
                                                    Link3Value,
                                                    Link4Value,
                                                    centered = false, // Default to false for backward compatibility
+                                                   topOfPage = false,
                                                }) => {
     const Links = [
         { name: Link1Name, href: Link1Value },
@@ -85,7 +87,7 @@ const HeaderSection: FC<HeaderSectionProps> = ({
                             {Tagline}
                         </p>
                     )}
-                    <h2 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">{Name}</h2>
+                    <h2 className={`font-bold tracking-tight text-white ${topOfPage ? 'text-5xl sm:text-7xl' : 'text-4xl sm:text-5xl'}`}>{Name}</h2>
                     {Description && (
                         <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
                             {Description}
