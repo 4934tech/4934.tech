@@ -43,9 +43,8 @@ export default function Winter2024() {
                 additionalContent={
                     "We're going to have a lot of fun, and I hope you can join us! If you can't join, don't worry. We'll do another one of these at some point."
                 }
-                topOfPage={true}
+                centered={false}
             />
-            <h3 className="font-bold tracking-tight text-3xl text-white">R</h3>
         </>
     );
 }
