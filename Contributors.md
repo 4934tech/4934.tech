@@ -14,7 +14,7 @@ We highly recommend looking at the individual file commit history for the most c
 - [Sahil Chopra]("https://github.com/aunncodes"), epic person
     - Tested the project and found bugs
     - Came up with ideas for the project
-- [Your Name](#) - Your **awesome** Role, Something epic!
+- [Your Name]() - Your **awesome** Role, Something epic!
     - Your epic contributions to the project
     - Brag about stuff!
     - Being proud of your contributions!
