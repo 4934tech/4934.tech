@@ -17,7 +17,6 @@ limitations under the License.
 import { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {bold} from "next/dist/lib/picocolors";
 
 interface Feature {
     icon: ReactNode;
