@@ -35,7 +35,7 @@ export default function Copyright() {
                         these terms, please do not use our website.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">1. Open Source Licensing</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">1. Open Source Licensing</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Most of our projects are open source and distributed under the GNU General Public License 3
                         (GPLv3) or Apache License. You can find the full text of these licenses at the following links:
@@ -53,7 +53,7 @@ export default function Copyright() {
                         include a notice at the top of the file regarding the license associated with it.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">2. Attribution</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">2. Attribution</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Attribution is a core aspect of open-source software. When using or redistributing our projects,
                         please include the following:
@@ -66,7 +66,7 @@ export default function Copyright() {
                         <li>A copy of or link to the License used in the program.</li>
                     </ul>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">3. Exceptions</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">3. Exceptions</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Some projects or components may include dependencies or third-party software with their own
                         licensing terms. Please review individual project repositories for any exceptions or additional
@@ -83,7 +83,7 @@ export default function Copyright() {
                         the full text of the license in your distribution.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">4. Use of Content</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">4. Use of Content</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our website and its content are protected by copyright laws. You may not go further than the
                         restrictions made clear in the respective project&apos;s license without our explicit
@@ -94,7 +94,7 @@ export default function Copyright() {
                         methods at the bottom of this article.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">5. 4934.tech License Information</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">5. 4934.tech License Information</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our website, 4934.tech, and its content are fully open source and distributed under the <a
                         className="text-blue-400 hover:underline"
@@ -108,7 +108,7 @@ export default function Copyright() {
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
 
-                    <h3 className="mt-12 text-3xl font-semibold text-white">9. Contact Us</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">9. Contact Us</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         If you have any questions or concerns about this Privacy Policy, please contact us at:
                     </p>

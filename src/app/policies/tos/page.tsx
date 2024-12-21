@@ -30,12 +30,12 @@ export default function TermsOfService() {
                         Please read these Terms carefully. They include important information about your legal rights, remedies, and obligations. By using our Services, you agree to comply with these Terms and our Privacy Policy.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">1. Acceptance of Terms</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">1. Acceptance of Terms</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         By using our Services, you confirm that you are at least 13 years old and have the legal capacity to enter into this agreement. If you are under 18, you agree to use our Services only under the supervision of a parent or guardian.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">2. Community Guidelines</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">2. Community Guidelines</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our community is built on respect and collaboration. When participating in discussions, contributing content, or engaging with other users, you agree to:
                     </p>
@@ -49,7 +49,7 @@ export default function TermsOfService() {
                         We reserve the right to remove any content or suspend users who violate these guidelines.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">3. Intellectual Property</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">3. Intellectual Property</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         All of our webpages and most of our projects are open source and distributed under the Apache License. You can find our copyright details at section five of <a className="text-blue-400 hover:underline" href="https://4934.tech/policies/copyright">this
                         page</a>.
@@ -58,7 +58,7 @@ export default function TermsOfService() {
                         By submitting content to our community, you grant us a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content in connection with the Services. You retain ownership of your submissions.
                     </p>
                         <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">4. User Accounts</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">4. User Accounts</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         If you create an account on 4934.tech, you are responsible for:
                     </p>
@@ -71,36 +71,36 @@ export default function TermsOfService() {
                         We reserve the right to suspend or terminate accounts for violations of these Terms or unauthorized activity.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">5. Disclaimer of Warranties</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">5. Disclaimer of Warranties</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our Services are provided &quot;as is&quot; and &quot;as available&quot; without any warranties, express or implied. While we strive to maintain accurate and up-to-date content, we make no guarantees regarding the reliability, availability, or suitability of our Services for your needs.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">6. Limitation of Liability</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">6. Limitation of Liability</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         To the fullest extent permitted by law, 4934.tech and its affiliates are not liable for any direct, indirect, incidental, or consequential damages resulting from your use of or inability to use our Services.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">7. Third-Party Links</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">7. Third-Party Links</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our website may contain links to third-party websites or services. We are not responsible for the content, privacy practices, or availability of these external sites. Use them at your own discretion.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">8. Termination</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">8. Termination</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We may update these Terms from time to time. Any changes will be posted on this page with an updated &quot;Effective Date.&quot; Your continued use of our Services after changes are made constitutes your acceptance of the new Terms.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">9. Modifications to Terms</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">9. Modifications to Terms</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We may update these Terms from time to time. Any changes will be posted on this page with an updated &quot;Effective Date.&quot; We encourage you to review this page periodically for the latest information.
                     </p>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">10. Governing Law</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">10. Governing Law</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         These Terms are governed by the laws of the State of California, without regard to its conflict of law principles. Any disputes arising from these Terms will be resolved in the federal or state courts of California.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">11. Contact Us</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">11. Contact Us</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         If you have any questions or concerns about these Terms, please contact us at:
                     </p>

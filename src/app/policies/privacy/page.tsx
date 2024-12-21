@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
                         these terms, please do not use our website.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">1. Information We Collect</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">1. Information We Collect</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We collect only the information you choose to provide. This may include:
                     </p>
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
                         </li>
                     </ul>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">2. How We Use Your Information</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">2. How We Use Your Information</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We use your information to:
                     </p>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
                         marketing purposes.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">3. Data Sharing</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">3. Data Sharing</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We may share your information only in the following limited circumstances:
                     </p>
@@ -78,21 +78,21 @@ export default function PrivacyPolicy() {
                         </li>
                     </ul>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">4. Cookies and Tracking Technologies</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">4. Cookies and Tracking Technologies</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We use cookies to enhance your experience on our website. Cookies may collect non-identifiable
                         information about your browsing activity. You can adjust your browser settings to refuse cookies
                         if you prefer.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">5. Data Security</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">5. Data Security</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We implement reasonable technical and organizational measures to protect your data from
                         unauthorized access, loss, or misuse. However, no system is entirely foolproof, and we cannot
                         guarantee complete security.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">6. Your Rights</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">6. Your Rights</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Depending on your location, you may have rights over your data, including:
                     </p>
@@ -102,21 +102,21 @@ export default function PrivacyPolicy() {
                         <li>Deleting your personal data.</li>
                     </ul>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">7. Children’s Privacy</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">7. Children’s Privacy</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         Our website is not intended for children under 13 years of age. We do not knowingly collect
                         personal information from children. If you are a parent or guardian and believe your child has
                         provided us with personal information, please contact us so we can take appropriate action.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">8. Changes to This Privacy Policy</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">8. Changes to This Privacy Policy</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         We may update this Privacy Policy from time to time. Any changes will be posted on this page
                         with an updated &quot;Effective Date.&quot; We encourage you to review this page periodically
                         for the latest information.
                     </p>
                     <hr className="mt-12 border-t-1 border-gray-700"/>
-                    <h3 className="mt-12 text-3xl font-semibold text-white">9. Contact Us</h3>
+                    <h3 className="mt-12 text-3xl font-bold text-white">9. Contact Us</h3>
                     <p className="mt-6 text-pretty text-lg font-medium text-gray-300">
                         If you have any questions or concerns about this Privacy Policy, please contact us at:
                     </p>
