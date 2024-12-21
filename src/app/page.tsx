@@ -7,13 +7,13 @@ export default function Home() {
       <>
             <HomeHero />
             <CallToAction
-                  Tagline="We thrive on community."
-                  Description="Join us in our mission to make the world a better place through open source technology. Every contribution matters, no matter how small."
-                  ButtonText="Start Contributing"
-                  ButtonLink="https://github.com/4934tech"
-                  ImageSource="/Screenshots/UltraAgentSourceCode.png"
-                  ImageWidth={800}
-                  ImageHeight={800}
+                  tagline="We thrive on community."
+                  description="Join us in our mission to make the world a better place through open source technology. Every contribution matters, no matter how small."
+                  buttonText="Start Contributing"
+                  buttonLink="https://github.com/4934tech"
+                  imageSource="/Screenshots/UltraAgentSourceCode.png"
+                  imageWidth={800}
+                  imageHeight={800}
             />
           {/* <EmailSignup /> */}
       </>
