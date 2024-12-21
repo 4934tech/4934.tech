@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import HeaderSection from "@/components/HeaderSection";
+import UnifiedSection from '@/components/UnifiedSection';
 
 /* TODO: Implement & show off these components.
 import Banner from '@/components/Banner';
@@ -31,17 +31,22 @@ import Testimonials from "@/components/Testimonials";
 export default function WebComponentListShowcase() {
     return (
         <>
-        <HeaderSection Tagline={"Showcase"}
-                       Name={"Web Components"}
-                       Description={"This page is intended to showcase some of our favorite components we've built."}
-                       Content={"We've built a lot of components, and we wanted to showcase our favorites! You might find some" +
-                           " on this website, some not. This page doesn't include all of our components, just the on" +
-                           "es we're the most proud of. If you would like to see all of our components, please check" +
-                           " out the source code."}
-                       Link1Name={"Source Code"}
-                       Link2Name={"Contributors"}
-                       Link1Value={"https://github.com/4934tech/4934.tech"}
-                       Link2Value={"https://github.com/4934tech/4934.tech/Contributors.md"} centered={false} />
+                    <UnifiedSection
+                                    tagline={"Showcase"}
+                                   title={"Web Components"}
+                                   description={"This page is intended to showcase some of our favorite components we've built."}
+                                   content={"We've built a lot of components, and we wanted to showcase our favorites! You might find some" +
+                                       " on this website, some not. This page doesn't include all of our components, just the on" +
+                                       "es we're the most proud of. If you would like to see all of our components, please check" +
+                                       " out the source code. \n As for some components, like the NavBar and Footer, they're not displayed here," +
+                                       " as they're on most pages."}
+                                   links={[
+                                        {name: "GitHub", href: "https://github.com/4934tech/" },
+                                        {name: "Source Code", href: "https://github.com/4934tech/4934.tech/" },
+                                        {name: "Contributors", href: "https://github.com/4934tech/4934.tech/Contributors.md" },
+                                   ]}
+                                    topOfPage={true}
+                    />
         </>
     );
 }
