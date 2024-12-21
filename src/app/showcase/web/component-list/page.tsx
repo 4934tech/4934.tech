@@ -17,11 +17,11 @@ limitations under the License.
 import UnifiedSection from '@/components/UnifiedSection';
 import Banner from '@/components/Banner';
 import CallToAction from "@/components/CallToAction";
+import ContactForm from "@/components/ContactForm";
 
 /* TODO: Implement & show off these components.
 import BentoGrid from '@/components/BentoGrid';
 import CallToAction from "@/components/CallToAction";
-import ContactForm from "@/components/ContactForm";
 import ContentSection from "@/components/ContentSection";
 import EmailSignup from "@/components/EmailSignup";
 import HomeHero from "@/components/HomeHero";
@@ -39,7 +39,8 @@ export default function WebComponentListShowcase() {
                                    content={"We've built a lot of components, and we wanted to showcase our favorites! You might find some" +
                                        " on this website, some not. This page doesn't include all of our components, just the on" +
                                        "es we're the most proud of. If you would like to see all of our components, check" +
-                                       " out the source code. \n If you contributed to the site and wanted to showcase your components, feel free! This is a community anyways! <3 \n Some components, like the NavBar and Footer, they're not displayed here," +
+                                       " out the source code. \n If you contributed to the site and wanted to showcase your components, feel free!" +
+                                       "This is a community anyways! <3 \n Some components, like the NavBar and Footer, they're not displayed here," +
                                        " because they're on every page. Just look up and down for those.\n"}
                                    links={[
                                         {name: "GitHub", href: "https://github.com/4934tech/" },
@@ -66,6 +67,10 @@ export default function WebComponentListShowcase() {
                         imageWidth={1000}
                         imageHeight={1000}
                         showCase={true}
+                    />
+                    <UnifiedSection title={"Contact Section"} description={"A contact form you can use to talk to us!"} topOfPage={false} />
+                    <ContactForm
+                        showTitle={false}
                     />
         </>
     );
