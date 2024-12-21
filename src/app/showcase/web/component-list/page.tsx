@@ -70,7 +70,7 @@ export default function WebComponentListShowcase() {
                     <ContactForm
                         showTitle={false}
                     />
-                    <UnifiedSection title={"Email Signup"} description={"A simple email signup form."} topOfPage={false} />
+                    <UnifiedSection title={"Email Signup"} description={"A simple email signup form."} topOfPage={false} rightAligned={true}/>
                     <EmailSignup
                         showcase={true}
                     />
