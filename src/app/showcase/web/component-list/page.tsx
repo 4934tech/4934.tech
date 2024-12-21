@@ -18,15 +18,13 @@ import UnifiedSection from '@/components/UnifiedSection';
 import Banner from '@/components/Banner';
 import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
+import EmailSignup from "@/components/EmailSignup";
+
 
 /* TODO: Implement & show off these components.
 import BentoGrid from '@/components/BentoGrid';
-import CallToAction from "@/components/CallToAction";
-import ContentSection from "@/components/ContentSection";
-import EmailSignup from "@/components/EmailSignup";
 import HomeHero from "@/components/HomeHero";
 import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
  */
 
 export default function WebComponentListShowcase() {
@@ -71,6 +69,10 @@ export default function WebComponentListShowcase() {
                     <UnifiedSection title={"Contact Section"} description={"A contact form you can use to talk to us!"} topOfPage={false} />
                     <ContactForm
                         showTitle={false}
+                    />
+                    <UnifiedSection title={"Email Signup"} description={"A simple email signup form."} topOfPage={false} />
+                    <EmailSignup
+                        showcase={true}
                     />
         </>
     );
