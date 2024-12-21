@@ -82,7 +82,7 @@ export default function ContentSection({
                                 {title}
                             </h1>
                             {description && (
-                                <p className="mt-8 text-xl/8 text-gray-400 text-pretty font-medium">
+                                <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
                                     {description}
                                 </p>
                             )}
@@ -91,7 +91,7 @@ export default function ContentSection({
                             centered ? 'text-center' : 'max-w-xl lg:max-w-lg'
                         } text-lg text-pretty text-gray-300`}>
                             {content && (
-                                <div className={`mt-8 text-gray-400 text-pretty font-medium`}>
+                                <div className={`mt-8 text-gray-300 text-pretty`}>
                                     {content.split('\n').map((paragraph, index) => (
                                         <p key={index} className={index > 0 ? 'mt-4' : ''}>
                                             {paragraph}
@@ -110,7 +110,7 @@ export default function ContentSection({
                                                 <strong
                                                     className="font-semibold bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text text-transparent">
                                                     {feature.title}
-                                                </strong>{' '}
+                                                </strong>{': '}
                                                 {feature.description}
                                             </span>
                                         </li>
@@ -118,7 +118,7 @@ export default function ContentSection({
                                 </ul>
                             )}
                             {additionalContent && (
-                                <div className={`text-gray-400 text-pretty font-medium ${features.length > 0 ? 'mt-8' : ''}`}>
+                                <div className={`text-gray-300 text-pretty ${features.length > 0 ? 'mt-8' : ''}`}>
                                     {additionalContent.split('\n').map((paragraph, index) => (
                                         <p key={index} className={index > 0 ? 'mt-4' : ''}>
                                             {paragraph}

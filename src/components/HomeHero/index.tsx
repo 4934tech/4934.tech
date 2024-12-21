@@ -51,7 +51,7 @@ export default function HomeHero() {
                             the Future.
                         </h1>
 
-                        <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
+                        <p className="mt-8 text-pretty text-xl/8 font-medium text-gray-300 sm:text-xl/8">
                             Join our community of developers, designers, and innovators working together to create cutting-edge open source technology that pushes the boundaries of what&apos;s possible.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
