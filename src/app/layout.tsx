@@ -9,14 +9,12 @@ import DynamicBackground from "@/components/DynamicBackground";
 import Footer from "@/components/Footer";
 import React from "react";
 
-/* import Banner from "@/components/Banner"; */
-
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
 });
 
-const geistMono = Azeret_Mono({
+const azeretMono = Azeret_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
@@ -68,12 +66,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark">
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-950 text-gray-100 flex flex-col min-h-screen`}
-        >
+        <html lang="en" className={`dark ${geistSans.variable} ${azeretMono.variable}`}>
+        <body className="font-sans antialiased bg-gray-950 text-gray-100 flex flex-col min-h-screen">
         <NavBar />
-        {/* <Banner mainTitle={"Hello, World!"} subtitle={"Got any suggestions for our website?"} buttonText={"Contribute!"} buttonHref={"https://github.com/4934tech/4934.tech"} /> */}
         <DynamicBackground />
         <main className="flex-grow pt-16 z-10 relative">
             {children}
