@@ -87,19 +87,10 @@ export default function Testimonials() {
         <section className="py-24 relative overflow-hidden min-h-screen">
             <div className="absolute inset-0 bg-transparent" />
 
-            <div className="relative max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
-                    <h2 className="text-transparent bg-gradient-to-tr from-[#32b7b6] to-[#425389] bg-clip-text text-lg font-semibold mb-3">
-                        Testimonials
-                    </h2>
-                    <h3 className="text-4xl font-semibold text-white md:text-5xl lg:text-6xl">
-                        We have worked with<br />
-                        thousands of amazing people
-                    </h3>
-                </div>
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Mobile Layout (3 testimonials) */}
-                <div className="grid grid-cols-1 gap-6 md:hidden">
+                <div className="grid grid-cols-1 gap-10">
                     {mobileTestimonials.map((testimonial, index) => (
                         <div key={index}>
                             <blockquote className="bg-black/40 backdrop-blur-lg rounded-2xl shadow-sm p-6">
