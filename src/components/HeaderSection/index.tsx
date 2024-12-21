@@ -81,7 +81,7 @@ const HeaderSection: FC<HeaderSectionProps> = ({
     ].filter(stat => stat.name && stat.value);
 
     return (
-        <section className="py-24 sm:py-32 mt-16">
+        <section className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className={`mx-auto max-w-2xl ${centered ? 'text-center' : 'lg:mx-0'}`}>
                     {Tagline && (
