@@ -57,7 +57,16 @@ export default function WebComponentListShowcase() {
                         showCased={true}
                     />
                     <UnifiedSection title={"Call To Action"} rightAligned={true} description={"A cool notification-style call to action which wants you to do something cool."} topOfPage={false} />
-                    <CallToAction Tagline={"Check It Out!"} Description={"Doesn't this look cool? This is some epic body text to try to convince you to do stuff."} ButtonText={"Click This!"} ButtonLink={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"} ImageSource={'https://4934.tech/Screenshots/PythonVSCode.png'} ImageWidth={1000} ImageHeight={1000} />
+                    <CallToAction
+                        tagline={"Check It Out!"}
+                        description={"Doesn't this look cool? This is some epic body text to try to convince you to do stuff."}
+                        buttonText={"Click This!"}
+                        buttonLink={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+                        imageSource={'https://4934.tech/Screenshots/PythonVSCode.png'}
+                        imageWidth={1000}
+                        imageHeight={1000}
+                        showCase={true}
+                    />
         </>
     );
 }
