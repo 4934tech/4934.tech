@@ -88,9 +88,9 @@ export default function NavBar() {
         <header className="fixed top-0 left-0 right-0 z-40 px-4 py-4 transition-all duration-300 ease-in-out">
             <nav
                 aria-label="Global"
-                className="mx-auto flex max-w-[1400px] items-center justify-between sm:rounded-3xl py-2 px-6 transition-all duration-300 ease-in-out"
+                className="border-white/5 border mx-auto flex max-w-[1400px] items-center justify-between sm:rounded-3xl py-2 px-6 transition-all duration-300 ease-in-out"
                 style={{
-                    backgroundColor: `rgba(0, 0, 0, ${opacity + 0.1})`,
+                    backgroundColor: `rgba(100, 100, 100, ${0.1*opacity + 0.05})`,
                     backdropFilter: `blur(${blur}px)`,
                     WebkitBackdropFilter: `blur(${blur}px)`,
                     boxShadow: `0 4px 6px -1px rgba(0, 0, 0, ${opacity * 0.1}), 0 2px 4px -1px rgba(0, 0, 0, ${opacity * 0.06})`

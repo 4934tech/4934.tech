@@ -39,9 +39,9 @@ export default function Footer() {
     // noinspection XmlDeprecatedElement
     return (
         <footer className="px-6 py-8 mt-auto">
-            <div className="mx-auto max-w-[1400px] sm:rounded-3xl transition-all duration-500 ease-in-out"
+            <div className="border-white/5 border mx-auto max-w-[1400px] sm:rounded-3xl transition-all duration-500 ease-in-out"
                  style={{
-                     backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+                     backgroundColor: `rgba(100, 100, 100, ${0.1*opacity + 0.05})`,
                      backdropFilter: `blur(10px)`,
                      WebkitBackdropFilter: `blur(10px)`,
                      boxShadow: `0 4px 6px -1px rgba(0, 0, 0, ${opacity * 0.1}), 0 2px 4px -1px rgba(0, 0, 0, ${opacity * 0.06})`

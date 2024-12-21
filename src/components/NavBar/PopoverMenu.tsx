@@ -37,9 +37,9 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
 
                     <PopoverPanel
                         transition
-                        className={`absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in`}
+                        className={`border-white/5 border absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in`}
                         style={{
-                            backgroundColor: `rgba(0, 0, 0, ${opacity + 0.3})`,
+                            backgroundColor: `rgba(100, 100, 100, ${0.1*opacity + 0.05})`,
                             backdropFilter: `blur(${blur}px)`,
                             WebkitBackdropFilter: `blur(${blur}px)`,
                         }}
@@ -48,9 +48,9 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                             {items.map((item: MenuItem) => (
                                 <div
                                     key={item.name}
-                                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-black/15 transition-colors duration-200 ease-in-out"
+                                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:outline-white/5 hover:outline hover:outline-1 hover:border-white/10 transition-colors duration-200 ease-in-out"
                                 >
-                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-black/15 group-hover:divide-gray-900/10">
+                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-white/15 group-hover:divide-gray-900/10">
                                         <item.icon aria-hidden="true" className="size-6 text-gray-300 group-hover:text-[#32b7b6] transition-colors duration-200 ease-in-out" />
                                     </div>
                                     <div className="flex-auto">
@@ -58,7 +58,7 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                                             {item.name}
                                             <span className="absolute inset-0" />
                                         </a>
-                                        <p className="mt-1 text-gray-500">{item.description}</p>
+                                        <p className="mt-1 text-gray-400">{item.description}</p>
                                     </div>
                                 </div>
                             ))}
