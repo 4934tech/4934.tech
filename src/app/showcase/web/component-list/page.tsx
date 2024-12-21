@@ -31,7 +31,17 @@ import Testimonials from "@/components/Testimonials";
 export default function WebComponentListShowcase() {
     return (
         <>
-        <HeaderSection Tagline={"Showcase"} Name={"Web Components"} Description={"This page is intended to showcase some of our favorite components we've built. You might find some on this website, some not. This page doesn't include all of our components, just the ones we're the most proud of. If you would like to see all of our components, please check out the source code."} Link1Name={"Source Code"} Link2Name={"Contributors"} Link1Value={"https://github.com/4934tech/4934.tech"} Link2Value={"https://github.com/4934tech/4934.tech/Contributors.md"} centered={false} />
+        <HeaderSection Tagline={"Showcase"}
+                       Name={"Web Components"}
+                       Description={"This page is intended to showcase some of our favorite components we've built."}
+                       Content={"We've built a lot of components, and we wanted to showcase our favorites! You might find some" +
+                           " on this website, some not. This page doesn't include all of our components, just the on" +
+                           "es we're the most proud of. If you would like to see all of our components, please check" +
+                           " out the source code."}
+                       Link1Name={"Source Code"}
+                       Link2Name={"Contributors"}
+                       Link1Value={"https://github.com/4934tech/4934.tech"}
+                       Link2Value={"https://github.com/4934tech/4934.tech/Contributors.md"} centered={false} />
         </>
     );
 }

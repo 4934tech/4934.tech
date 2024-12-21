@@ -21,6 +21,7 @@ interface HeaderSectionProps {
     Tagline?: string;
     Name: string;
     Description?: string;
+    Content?: string;
     Stat1Name?: string;
     Stat2Name?: string;
     Stat3Name?: string;
@@ -42,27 +43,28 @@ interface HeaderSectionProps {
 }
 
 const HeaderSection: FC<HeaderSectionProps> = ({
-                                                   Tagline,
-                                                   Name,
-                                                   Description,
-                                                   Stat1Name,
-                                                   Stat2Name,
-                                                   Stat3Name,
-                                                   Stat4Name,
-                                                   Stat1Value,
-                                                   Stat2Value,
-                                                   Stat3Value,
-                                                   Stat4Value,
-                                                   Link1Name,
-                                                   Link2Name,
-                                                   Link3Name,
-                                                   Link4Name,
-                                                   Link1Value,
-                                                   Link2Value,
-                                                   Link3Value,
-                                                   Link4Value,
-                                                   centered = false, // Default to false for backward compatibility
-                                                   topOfPage = false,
+                                                Tagline,
+                                                Name,
+                                                Description,
+                                                Content,
+                                                Stat1Name,
+                                                Stat2Name,
+                                                Stat3Name,
+                                                Stat4Name,
+                                                Stat1Value,
+                                                Stat2Value,
+                                                Stat3Value,
+                                                Stat4Value,
+                                                Link1Name,
+                                                Link2Name,
+                                                Link3Name,
+                                                Link4Name,
+                                                Link1Value,
+                                                Link2Value,
+                                                Link3Value,
+                                                Link4Value,
+                                                centered = false, // Default to false for backward compatibility
+                                                topOfPage = false,
                                                }) => {
     const Links = [
         { name: Link1Name, href: Link1Value },
@@ -89,9 +91,22 @@ const HeaderSection: FC<HeaderSectionProps> = ({
                     )}
                     <h2 className={`font-bold tracking-tight text-white ${topOfPage ? 'text-5xl sm:text-7xl' : 'text-4xl sm:text-5xl'}`}>{Name}</h2>
                     {Description && (
-                        <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-                            {Description}
-                        </p>
+                        <div className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
+                            {Description.split('\n').map((paragraph, index) => (
+                                <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
+                    )}
+                    {Content && (
+                        <div className={`mt-8 text-lg text-gray-300 text-pretty`}>
+                            {Content.split('\n').map((paragraph, index) => (
+                                <p key={index} className={index > 0 ? 'mt-4' : ''}>
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
                     )}
                 </div>
                 <div className={`mx-auto mt-10 max-w-2xl ${centered ? 'text-center' : 'lg:mx-0 lg:max-w-none'}`}>
