@@ -46,7 +46,10 @@ export async function POST(request: NextRequest) {
 
         // 5. Respond back to client
         return NextResponse.json({ message: 'Email sent successfully via Mailgun API' });
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message || String(error) }, { status: 500 });
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+        return NextResponse.json({ error: String(error) }, { status: 500 });
     }
 }
