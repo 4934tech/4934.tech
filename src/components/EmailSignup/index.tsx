@@ -39,7 +39,7 @@ export default function EmailSignup({ showcase }: EmailSignupProps) {
                                 name="email"
                                 type="email"
                                 autoComplete="email"
-                                className="block w-full rounded-md bg-black/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-gray-800/50 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
+                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
                                 required
                                 placeholder="Enter your email"
                             />
@@ -54,7 +54,7 @@ export default function EmailSignup({ showcase }: EmailSignupProps) {
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                         <div className="flex flex-col items-start">
                             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                <Check aria-hidden="true" className="size-6 text-white" />
+                                <Check aria-hidden="true" className="size-6 text-gray-300" />
                             </div>
                             <dt className="mt-4 text-base font-semibold text-white">Once in a while</dt>
                             <dd className="mt-2 text-base/7 text-gray-400">
@@ -63,7 +63,7 @@ export default function EmailSignup({ showcase }: EmailSignupProps) {
                         </div>
                         <div className="flex flex-col items-start">
                             <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                <X aria-hidden="true" className="size-6 text-white" />
+                                <X aria-hidden="true" className="size-6 text-gray-300" />
                             </div>
                             <dt className="mt-4 text-base font-semibold text-white">No spam, ever</dt>
                             <dd className="mt-2 text-base/7 text-gray-400">
