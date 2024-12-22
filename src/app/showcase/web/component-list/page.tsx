@@ -21,8 +21,7 @@ import ContactForm from "@/components/ContactForm";
 import EmailSignup from "@/components/EmailSignup";
 import Stats from "@/components/Stats";
 
-/* TODO: Implement & show off these components.
-import BentoGrid from '@/components/BentoGrid';
+/* I'm not too sure if I want to show off our HomeHero component, but I'll leave it here for now.
 import HomeHero from "@/components/HomeHero";
 */
 
