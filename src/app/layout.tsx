@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { Geist } from 'next/font/google';
 import { Azeret_Mono } from 'next/font/google';
 import "@/styles/globals.css";
-import NavBar from "../features/NavBar/components";
+import NavBar from "@/features/NavBar/components";
 import DynamicBackground from "@/components/DynamicBackground";
-import Footer from "../features/Footer/components";
+import Footer from "@/features/Footer/components";
 import React from "react";
 
 const geistSans = Geist({
