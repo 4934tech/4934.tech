@@ -42,6 +42,9 @@ interface HeaderSectionProps {
     topOfPage?: boolean;
 }
 
+/**
+ * @deprecated This component is deprecated. Please use `UnifiedSection` instead.
+ */
 const HeaderSection: FC<HeaderSectionProps> = ({
                                                 Tagline,
                                                 Name,

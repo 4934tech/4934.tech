@@ -39,6 +39,9 @@ interface ContentSectionProps {
     topOfPage?: boolean
 }
 
+/**
+ * @deprecated This component is deprecated. Please use `UnifiedSection` instead.
+ */
 export default function ContentSection({
                                            tagline,
                                            title,
