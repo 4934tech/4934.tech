@@ -33,7 +33,7 @@ import { Logo } from '@/components/Logo'
 import { DesktopMenu } from './DesktopMenu'
 import { MobileMenu } from './MobileMenu'
 import { NavItem } from './NavItem'
-import { MenuCTAItem, MenuItem } from '@/types/navbar'
+import { MenuCTAItem, MenuItem } from '@/components/NavBar/navbar.types'
 
 // noinspection SpellCheckingInspection
 const projects: MenuItem[] = [

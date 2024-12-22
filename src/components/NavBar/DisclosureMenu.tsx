@@ -16,7 +16,7 @@ limitations under the License.
 
 import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { MenuItem } from '@/types/navbar';
+import { MenuItem } from '@/components/NavBar/navbar.types';
 
 interface DisclosureMenuProps {
     label: string;

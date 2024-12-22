@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { MenuItem, MenuCTAItem } from '@/types/navbar';
+import { MenuItem, MenuCTAItem } from '@/components/NavBar/navbar.types';
 import { NavItem } from './NavItem';
 
 interface PopoverMenuProps {
