@@ -150,7 +150,7 @@ const ContactForm: FC<ContactFormProps> = ({ topOfPage = false, showTitle = fals
                         <span className="relative z-10">{pending ? 'Sending...' : 'Let\'s talk'}</span>
                     </button>
                 </div>
-                <p className="mt-4 text-sm text-green-500 text-center">Thank you for your message. We'll be in touch soon!</p>
+                <p className="mt-4 text-sm text-green-500 text-center">Thank you for your message. We&apos;ll be in touch soon!</p>
             </form>
         </div>
     );
