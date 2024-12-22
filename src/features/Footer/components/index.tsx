@@ -20,7 +20,7 @@ import { useEffect, useState } from 'react'
 import Link from "next/link"
 import { Logo } from "@/components/Logo"
 // noinspection JSDeprecatedSymbols
-import { Facebook, Mail, Twitter, Github, Youtube } from 'lucide-react'
+import { Facebook, Mail, Twitter, Github, Youtube, Gitlab, Triangle } from 'lucide-react'
 
 const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-all duration-200 ease-in-out group";
 const hoverClasses = "hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text";
@@ -76,6 +76,14 @@ export default function Footer() {
                                 <Link href="mailto:4934@4934.tech" className="group">
                                     <Mail className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">Email</span>
+                                </Link>
+                                <Link href={"https://gitlab.com/4934"} className={"group"}>
+                                    <Gitlab className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">GitLab</span>
+                                </Link>
+                                <Link href={"https://vercel.com/4934/"} className={"group"}>
+                                    <Triangle className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className={"sr-only"}>Vercel</span>
                                 </Link>
                             </div>
                         </div>
