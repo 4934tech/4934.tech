@@ -18,31 +18,15 @@ import { BentoGridItems } from '@/types/bentogrid';
 import BentoItem from './BentoItem';
 
 interface BentoGridProps {
-    heading?: string;
-    subheading?: string;
     items?: BentoGridItems;
+    showcase?: boolean;
 }
 
-export default function BentoGrid({ heading, subheading, items = {} }: BentoGridProps) {
+export default function BentoGrid({ items = {} }: BentoGridProps) {
     const hasItems = Object.values(items).some(item => item !== undefined);
-
-    if (!hasItems && !heading && !subheading) {
-        return null;
-    }
-
     return (
         <section className="bg-transparent py-20 sm:py-12">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-                {heading && (
-                    <h2 className="text-center text-base/7 font-semibold text-transparent bg-gradient-to-r from-[#32b7b6] to-[#425389] bg-clip-text">
-                        {heading}
-                    </h2>
-                )}
-                {subheading && (
-                    <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                        {subheading}
-                    </p>
-                )}
                 {hasItems && (
                     <div className={`mt-10 grid gap-4 sm:mt-16 ${getGridClass(Object.values(items).filter(Boolean).length)}`}>
                         <BentoItem

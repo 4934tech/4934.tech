@@ -50,7 +50,7 @@ export function PopoverMenu({ label, items, ctaItems, opacity, blur }: PopoverMe
                                     key={item.name}
                                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:outline-white/5 hover:outline hover:outline-1 hover:border-white/10 transition-colors duration-200 ease-in-out"
                                 >
-                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-white/15 group-hover:divide-gray-900/10">
+                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-500/15 group-hover:divide-gray-900/10">
                                         <item.icon aria-hidden="true" className="size-6 text-gray-300 group-hover:text-[#32b7b6] transition-colors duration-200 ease-in-out" />
                                     </div>
                                     <div className="flex-auto">
