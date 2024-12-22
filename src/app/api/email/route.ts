@@ -1,44 +1,52 @@
-import { type NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
+import { NextRequest, NextResponse } from 'next/server';
+
+export const runtime = 'edge';
 
 export async function POST(request: NextRequest) {
-    const { email, firstName, lastName, company,  message } = await request.json();
+    try {
+        // 1. Parse the incoming request data
+        const { email, firstName, lastName, company, message } = await request.json();
+        const mailgunDomain = process.env.MAILGUN_DOMAIN || '';
+        const mailgunApiKey = process.env.MAILGUN_API_KEY || '';
+        const recipientEmails = process.env.RECIPIENT_EMAILS || ''; // "someone@example.com"
 
-    const transport = nodemailer.createTransport({
-        service: 'mailgun',
-        auth: {
+        // 2. Build the content of the email
+        //    NOTE: For best results, ensure you set "from" to a domain verified in Mailgun.
+        const from = `Contact Form <postmaster@${mailgunDomain}>`;
+        const subject = `${firstName} ${lastName}, ${email} - 4934`;
+        const bodyText = `${message}\n\n${company}\n\nThis message was sent from the contact form on 4934.tech in accordance with the privacy policy (https://4934.tech/policies/privacy). The following data was submitted:\n${JSON.stringify({ email, firstName, lastName, company, message }, null, 2)}`;
 
-            user: process.env.MAILGUN_USER,
-            pass: process.env.MAILGUN_PASSWORD,
-        },
-    });
+        // 3. Prepare form data for Mailgun
+        const formData = new FormData();
+        formData.append('from', from);
+        formData.append('to', recipientEmails);
+        formData.append('cc', email); // cc the sender
+        formData.append('subject', subject);
+        formData.append('text', bodyText);
 
-    const mailOptions: Mail.Options = {
-        replyTo: email,
-        to: process.env.RECIPIENT_EMAILS,
-        cc: email,
-        subject: `${firstName} ${lastName}, ${email} - 4934)`,
-        text: message + '\n\n' + company + "\n\n This message was sent from the contact form on 4934. in accordance to the privacy policy (https://4934.tech/policies/privacy). The following data was submitted:" + JSON.stringify({ email, firstName, lastName, company, message }, null, 2),
-    };
+        // If you want a "Reply-To", Mailgun handles it via a custom header:
+        formData.append('h:Reply-To', email);
 
-    const sendMailPromise = () =>
-        new Promise<string>((resolve, reject) => {
-            transport.sendMail(mailOptions, function (err) {
-                if (!err) {
-                    resolve('Email sent');
-                } else {
-                    reject(err.message);
-                }
-            });
+        // 4. Make a POST request to Mailgun’s API
+        //    We use Basic Auth with "api:<API_KEY>"
+        const response = await fetch(`https://api.mailgun.net/v3/${mailgunDomain}/messages`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Basic ${btoa(`api:${mailgunApiKey}`)}`,
+            },
+            body: formData,
         });
 
-    try {
-        await sendMailPromise();
-        return NextResponse.json({ message: 'Email sent' });
-    } catch (err) {
-        return NextResponse.json({ error: err }, { status: 500 });
+        if (!response.ok) {
+            // Print any error text for debugging
+            const errorText = await response.text();
+            console.error('Mailgun Error:', errorText);
+            throw new Error(`Mailgun API returned status ${response.status}`);
+        }
+
+        // 5. Respond back to client
+        return NextResponse.json({ message: 'Email sent successfully via Mailgun API' });
+    } catch (error: any) {
+        return NextResponse.json({ error: error.message || String(error) }, { status: 500 });
     }
 }
-
-export const runtime = 'nodejs';
