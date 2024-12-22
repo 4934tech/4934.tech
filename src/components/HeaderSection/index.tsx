@@ -148,5 +148,6 @@ const HeaderSection: FC<HeaderSectionProps> = ({
     );
 };
 
+// noinspection JSDeprecatedSymbols
 export default HeaderSection;
 
