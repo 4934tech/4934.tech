@@ -20,9 +20,9 @@ import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import EmailSignup from "@/components/EmailSignup";
 import Stats from "@/components/Stats";
-import BentoGrid from '@/components/BentoGrid';
 
 /* TODO: Implement & show off these components.
+import BentoGrid from '@/components/BentoGrid';
 import HomeHero from "@/components/HomeHero";
 */
 
