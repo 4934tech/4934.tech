@@ -69,7 +69,7 @@ export default function Footer() {
                                     <Github className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">GitHub</span>
                                 </Link>
-                                <Link href="#" className="group">
+                                <Link href="https://youtube.com/@4934tech" className="group">
                                     <Youtube className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">YouTube</span>
                                 </Link>
