@@ -19,12 +19,11 @@ import Banner from '@/components/Banner';
 import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import EmailSignup from "@/components/EmailSignup";
-
+import Stats from "@/components/Stats";
+import BentoGrid from '@/components/BentoGrid';
 
 /* TODO: Implement & show off these components.
-import BentoGrid from '@/components/BentoGrid';
 import HomeHero from "@/components/HomeHero";
-import Stats from "@/components/Stats";
 */
 
 export default function WebComponentListShowcase() {
@@ -72,6 +71,15 @@ export default function WebComponentListShowcase() {
                     />
                     <UnifiedSection title={"Email Signup"} description={"A cool looking newsletter form! Doesn't work yet though. But it still looks cool!"} topOfPage={false} rightAligned={true}/>
                     <EmailSignup
+                        showcase={true}
+                    />
+                    <UnifiedSection title={"Stats"} description={"A cool looking stats component that shows off some cool stats. It's even dynamic!"} topOfPage={false} />
+                    <Stats
+                        stats= {[
+                            {id: 1, name: "Contributors", value: "10"},
+                            {id: 2, name: "Commits", value: "100"},
+                            {id: 3, name: "Issues", value: "50"},
+                        ]}
                         showcase={true}
                     />
         </>
