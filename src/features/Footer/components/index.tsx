@@ -1,5 +1,5 @@
 /*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+Copyright 2024 Olav "Olavorw" Sharma - 4934 (https://4934.tech)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import { useEffect, useState } from 'react'
 import Link from "next/link"
 import { Logo } from "@/components/Logo"
 // noinspection JSDeprecatedSymbols
-import { Facebook, Mail, Twitter, Github, Youtube } from 'lucide-react'
+import { Facebook, Mail, Twitter, Github, Youtube, Gitlab, Triangle } from 'lucide-react'
 
 const baseClasses = "flex items-center gap-x-1 text-sm/6 font-semibold transition-all duration-200 ease-in-out group";
 const hoverClasses = "hover:text-transparent hover:bg-gradient-to-r hover:from-[#32b7b6] hover:to-[#425389] hover:bg-clip-text";
@@ -50,7 +50,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
                         {/* Logo and Description Column */}
                         <div className="col-span-full lg:col-span-4">
-                            <div className="text-blue-400 mb-6">
+                            <div className="mb-6">
                                 <Logo />
                             </div>
                             <p className="text-slate-300 text-sm leading-relaxed max-w-xs">
@@ -69,13 +69,21 @@ export default function Footer() {
                                     <Github className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">GitHub</span>
                                 </Link>
-                                <Link href="#" className="group">
+                                <Link href="https://youtube.com/@4934tech" className="group">
                                     <Youtube className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">YouTube</span>
                                 </Link>
                                 <Link href="mailto:4934@4934.tech" className="group">
                                     <Mail className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
                                     <span className="sr-only">Email</span>
+                                </Link>
+                                <Link href={"https://gitlab.com/4934"} className={"group"}>
+                                    <Gitlab className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className="sr-only">GitLab</span>
+                                </Link>
+                                <Link href={"https://vercel.com/4934/"} className={"group"}>
+                                    <Triangle className="h-5 w-5 text-slate-400 transition-colors duration-200 ease-in-out group-hover:text-[#32b7b6]" />
+                                    <span className={"sr-only"}>Vercel</span>
                                 </Link>
                             </div>
                         </div>

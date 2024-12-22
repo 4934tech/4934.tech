@@ -1,5 +1,5 @@
 /*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+Copyright 2024 Olav "Olavorw" Sharma - 4934 (https://4934.tech)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { BentoItemProps } from '@/types/bentogrid';
+import { BentoItemProps } from '@/components/BentoGrid/BentoGrid.types';
 
 export default function BentoItem({
                                       title,

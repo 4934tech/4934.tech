@@ -1,4 +1,4 @@
-import HomeHero from "@/components/HomeHero";
+import HomeHero from "../features/HomeHero/components";
 import CallToAction from "@/components/CallToAction";
 /* import EmailSignup from "@/components/EmailSignup"; */ // Not finished yet
 

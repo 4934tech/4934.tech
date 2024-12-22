@@ -1,5 +1,5 @@
 /*
-Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
+Copyright 2024 Olav "Olavorw" Sharma - 4934 (https://4934.tech)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -148,5 +148,6 @@ const HeaderSection: FC<HeaderSectionProps> = ({
     );
 };
 
+// noinspection JSDeprecatedSymbols
 export default HeaderSection;
 
