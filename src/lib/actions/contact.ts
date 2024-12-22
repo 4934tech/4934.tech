@@ -1,6 +1,8 @@
 'use server'
 
 import { z } from 'zod'
+import * as FormData from 'form-data'
+import * as Mailgun from 'mailgun.js'
 
 const contactSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),
@@ -10,20 +12,70 @@ const contactSchema = z.object({
     message: z.string().min(10, 'Message must be at least 10 characters long'),
 })
 
-export async function submitContactForm(prevState: Record<string, unknown>, formData: FormData) {
-    const validatedFields = contactSchema.safeParse({
-        firstName: formData.get('first-name'),
-        lastName: formData.get('last-name'),
-        company: formData.get('company'),
-        email: formData.get('email'),
-        message: formData.get('message'),
+// Initialize Mailgun client outside the function to avoid recreating it on every request
+const mailgunClient = new Mailgun.default(FormData as any)
+
+// Explicitly type the formData parameter as a Web API FormData
+export async function submitContactForm(
+    _prevState: Record<string, unknown>,
+    formData: globalThis.FormData
+) {
+    // Access environment variables
+    const env = process.env.NEXT_RUNTIME === 'edge' ?
+        // @ts-ignore
+        globalThis.process.env : process.env
+
+    const mg = mailgunClient.client({
+        username: 'api',
+        key: env.MAILGUN_API_KEY || '',
     })
+
+    // Convert FormData to a regular object for validation
+    const rawFormData = {
+        firstName: formData.get('first-name')?.toString(),
+        lastName: formData.get('last-name')?.toString(),
+        company: formData.get('company')?.toString(),
+        email: formData.get('email')?.toString(),
+        message: formData.get('message')?.toString(),
+    }
+
+    const validatedFields = contactSchema.safeParse(rawFormData)
 
     if (!validatedFields.success) {
         return { success: false, errors: validatedFields.error.flatten().fieldErrors }
     }
 
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    const { firstName, lastName, company, email, message } = validatedFields.data
 
-    return { success: true }
+    // Compose the email
+    const mailData = {
+        from: `Contact Form <${env.MAILGUN_SENDER_EMAIL}>`,
+        to: (env.RECIPIENT_EMAILS || '').split(',').map(email => email.trim()),
+        subject: `Contact Form Submission From ${firstName} ${lastName} ${email} - 4934 Tech`,
+        text: `
+            Name: ${firstName} ${lastName}
+            Company: ${company || 'N/A'}
+            Email: ${email}
+            Message: ${message}
+        `,
+    }
+
+    try {
+        if (!env.RECIPIENT_EMAILS) {
+            // noinspection ExceptionCaughtLocallyJS
+            throw new Error('RECIPIENT_EMAILS environment variable is not set');
+        }
+        // Send the email
+        const result = await mg.messages.create(env.MAILGUN_DOMAIN || '', mailData)
+        console.log('Email sent successfully:', result)
+        return { success: true }
+    } catch (error) {
+        console.error('Error sending email:', error)
+        return {
+            success: false,
+            error: 'Failed to send email',
+            details: error instanceof Error ? error.message : String(error)
+        }
+    }
 }
+
