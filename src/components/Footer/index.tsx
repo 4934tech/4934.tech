@@ -50,7 +50,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12">
                         {/* Logo and Description Column */}
                         <div className="col-span-full lg:col-span-4">
-                            <div className="text-blue-400 mb-6">
+                            <div className="mb-6">
                                 <Logo />
                             </div>
                             <p className="text-slate-300 text-sm leading-relaxed max-w-xs">
