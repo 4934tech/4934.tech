@@ -58,7 +58,7 @@ const CallToAction = forwardRef<HTMLDivElement, CallToActionProps>(
             >
                 <div className={`mx-auto max-w-7xl ${showCase ? '' : 'py-24 sm:py-32'} sm:px-6 lg:px-8`}>
                     <div style={{backdropFilter: `blur(10px)`, WebkitBackdropFilter: `blur(10px)`}}
-                         className={`relative isolate overflow-hidden bg-white/5 border-white/5 border px-6 ${showCase ? 'pt-6' : 'pt-16'} shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0`}>
+                         className={`relative isolate overflow-hidden bg-gray-500/5 border-white/5 border px-6 ${showCase ? 'pt-6' : 'pt-16'} shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0`}>
                         <svg
                             viewBox="0 0 1024 1024"
                             aria-hidden="true"
