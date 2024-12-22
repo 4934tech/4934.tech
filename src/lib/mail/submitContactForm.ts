@@ -1,4 +1,5 @@
-'use server'
+// lib/submitContactForm.ts
+'use server' // optional: allows direct "Server Action" usage if needed
 
 import { z } from 'zod'
 import Mailgun from 'mailgun.js'
@@ -68,9 +69,11 @@ export async function submitContactForm(
         if (!env.RECIPIENT_EMAILS) {
             throw new Error('RECIPIENT_EMAILS environment variable is not set')
         }
+
         // Send the email
         const result = await mg.messages.create(env.MAILGUN_DOMAIN || '', mailData)
         console.log('Email sent successfully:', result)
+
         return { success: true }
     } catch (error) {
         console.error('Error sending email:', error)
