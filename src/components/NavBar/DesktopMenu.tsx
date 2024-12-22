@@ -17,7 +17,7 @@ limitations under the License.
 import { PopoverGroup } from '@headlessui/react';
 import { NavItem } from './NavItem';
 import { PopoverMenu } from './PopoverMenu';
-import { MenuProps } from '@/components/NavBar/navbar.types';
+import { MenuProps } from '@/components/NavBar/NavBar.types';
 
 interface DesktopMenuProps extends MenuProps {
     opacity: number;

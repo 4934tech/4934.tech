@@ -19,7 +19,7 @@ import { Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Logo } from '@/components/Logo';
 import { DisclosureMenu } from './DisclosureMenu';
-import { MenuProps, MenuItem } from '@/components/NavBar/navbar.types';
+import { MenuProps, MenuItem } from '@/components/NavBar/NavBar.types';
 
 interface MobileMenuProps extends MenuProps {
     isOpen: boolean;
