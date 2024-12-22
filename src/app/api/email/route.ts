@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
         const recipientEmails = process.env.RECIPIENT_EMAILS || '';
         const mailgunSender = process.env.MAILGUN_SENDER_EMAIL || '';
 
-        const from = `Contact Form <@${mailgunSender}>`;
+        const from = `Contact Form <${mailgunSender}>`;
         const subject = `${firstName} ${lastName} at ${company}, ${email} - 4934 Contact Form Submission`;
         const bodyText = `${message}\n\nThis message was sent from the contact form on 4934.tech in accordance with the privacy policy (https://4934.tech/policies/privacy).`;
 
