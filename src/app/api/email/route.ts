@@ -4,31 +4,24 @@ export const runtime = 'edge';
 
 export async function POST(request: NextRequest) {
     try {
-        // 1. Parse the incoming request data
         const { email, firstName, lastName, company, message } = await request.json();
         const mailgunDomain = process.env.MAILGUN_DOMAIN || '';
         const mailgunApiKey = process.env.MAILGUN_API_KEY || '';
-        const recipientEmails = process.env.RECIPIENT_EMAILS || ''; // "someone@example.com"
+        const recipientEmails = process.env.RECIPIENT_EMAILS || '';
+        const mailgunSender = process.env.MAILGUN_SENDER_EMAIL || '';
 
-        // 2. Build the content of the email
-        //    NOTE: For best results, ensure you set "from" to a domain verified in Mailgun.
-        const from = `Contact Form <postmaster@${mailgunDomain}>`;
-        const subject = `${firstName} ${lastName}, ${email} - 4934`;
-        const bodyText = `${message}\n\n${company}\n\nThis message was sent from the contact form on 4934.tech in accordance with the privacy policy (https://4934.tech/policies/privacy). The following data was submitted:\n${JSON.stringify({ email, firstName, lastName, company, message }, null, 2)}`;
+        const from = `Contact Form <@${mailgunSender}>`;
+        const subject = `${firstName} ${lastName} at ${company}, ${email} - 4934 Contact Form Submission`;
+        const bodyText = `${message}\n\nThis message was sent from the contact form on 4934.tech in accordance with the privacy policy (https://4934.tech/policies/privacy).`;
 
-        // 3. Prepare form data for Mailgun
         const formData = new FormData();
         formData.append('from', from);
         formData.append('to', recipientEmails);
-        formData.append('cc', email); // cc the sender
+        formData.append('cc', email);
         formData.append('subject', subject);
         formData.append('text', bodyText);
-
-        // If you want a "Reply-To", Mailgun handles it via a custom header:
         formData.append('h:Reply-To', email);
 
-        // 4. Make a POST request to Mailgun’s API
-        //    We use Basic Auth with "api:<API_KEY>"
         const response = await fetch(`https://api.mailgun.net/v3/${mailgunDomain}/messages`, {
             method: 'POST',
             headers: {
@@ -38,14 +31,13 @@ export async function POST(request: NextRequest) {
         });
 
         if (!response.ok) {
-            // Print any error text for debugging
             const errorText = await response.text();
             console.error('Mailgun Error:', errorText);
+            // noinspection ExceptionCaughtLocallyJS
             throw new Error(`Mailgun API returned status ${response.status}`);
         }
 
-        // 5. Respond back to client
-        return NextResponse.json({ message: 'Email sent successfully via Mailgun API' });
+        return NextResponse.json({ status: 200 });
     } catch (error: unknown) {
         if (error instanceof Error) {
             return NextResponse.json({ error: error.message }, { status: 500 });

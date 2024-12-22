@@ -20,13 +20,24 @@ interface ContactFormProps {
 }
 
 const ContactForm: FC<ContactFormProps> = ({ topOfPage = false, showTitle = false }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
     const [agreed, setAgreed] = useState(false);
     const { pending } = useFormStatus();
+    const [isEmailSent, setIsEmailSent] = useState(false);
+    const [emailError, setEmailError] = useState<string | null>(null);
 
-    const onSubmit = (data: FormData) => {
+    const onSubmit = async (data: FormData) => {
         if (agreed) {
-            sendEmail(data);
+            setIsEmailSent(false);
+            setEmailError(null);
+            const success = await sendEmail(data);
+            if (success) {
+                setIsEmailSent(true);
+                reset(); // Reset the form fields
+                setAgreed(false); // Reset the agreement checkbox
+            } else {
+                setEmailError('Failed to send email. Please try again later.');
+            }
         }
     };
 
@@ -104,12 +115,12 @@ const ContactForm: FC<ContactFormProps> = ({ topOfPage = false, showTitle = fals
                             Message
                         </label>
                         <div className="mt-2.5">
-              <textarea
-                  id="message"
-                  rows={4}
-                  className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
-                  {...register('message', { required: true })}
-              />
+                            <textarea
+                                id="message"
+                                rows={4}
+                                className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
+                                {...register('message', { required: true })}
+                            />
                         </div>
                         {errors.message && <p className="mt-2 text-sm text-red-500">Message is required</p>}
                     </div>
@@ -143,14 +154,19 @@ const ContactForm: FC<ContactFormProps> = ({ topOfPage = false, showTitle = fals
                         disabled={!agreed || pending}
                         className="relative w-full overflow-hidden rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#32b7b6] transition-all duration-300 ease-in-out group disabled:cursor-not-allowed disabled:opacity-50"
                     >
-            <span
-                className="absolute inset-0 bg-gradient-to-br from-[#1d6a69] to-[#1d243c] transition-opacity duration-300 ease-in-out group-hover:opacity-0 group-disabled:opacity-100"></span>
+                        <span
+                            className="absolute inset-0 bg-gradient-to-br from-[#1d6a69] to-[#1d243c] transition-opacity duration-300 ease-in-out group-hover:opacity-0 group-disabled:opacity-100"></span>
                         <span
                             className="absolute inset-0 bg-gradient-to-br from-[#32b7b6] to-[#425389] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-disabled:opacity-0"></span>
                         <span className="relative z-10">{pending ? 'Sending...' : 'Let\'s talk'}</span>
                     </button>
                 </div>
-                <p className="mt-4 text-sm text-green-500 text-center">Thank you for your message. We&apos;ll be in touch soon!</p>
+                {isEmailSent && (
+                    <p className="mt-4 text-sm text-green-500 text-center">Thank you for your message. We'll be in touch soon!</p>
+                )}
+                {emailError && (
+                    <p className="mt-4 text-sm text-red-500 text-center">{emailError}</p>
+                )}
             </form>
         </div>
     );

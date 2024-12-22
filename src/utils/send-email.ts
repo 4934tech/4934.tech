@@ -1,17 +1,25 @@
 import { FormData } from '@/components/ContactForm';
 
-export function sendEmail(data: FormData) {
+export async function sendEmail(data: FormData): Promise<boolean> {
     const apiEndpoint = '/api/email';
 
-    fetch(apiEndpoint, {
-        method: 'POST',
-        body: JSON.stringify(data),
-    })
-        .then((res) => res.json())
-        .then((response) => {
-            alert(response.message);
-        })
-        .catch((err) => {
-            alert(err);
+    try {
+        const response = await fetch(apiEndpoint, {
+            method: 'POST',
+            body: JSON.stringify(data),
         });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log(result.message);
+            return true;
+        } else {
+            console.log('Failed to send email');
+            return false;
+        }
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
 }
+
