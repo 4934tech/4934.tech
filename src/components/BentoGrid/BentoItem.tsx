@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { BentoItemProps } from '@/types/bentogrid';
+import { BentoItemProps } from '@/components/BentoGrid/BentoGrid.types';
 
 export default function BentoItem({
                                       title,

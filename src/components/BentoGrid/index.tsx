@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { BentoGridItems } from '@/types/bentogrid';
+import { BentoGridItems } from '@/components/BentoGrid/BentoGrid.types';
 import BentoItem from './BentoItem';
 
 interface BentoGridProps {
