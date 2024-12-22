@@ -1,14 +1,26 @@
 /*
-Copyright 2024 ...
+Copyright 2024 Olav "Olavorw" Sharma - 4934 Tech
 
-Licensed under the Apache License, Version 2.0 ...
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 */
 
 'use client'
 
-import React, { useState } from 'react'
-// No more imports from 'react-dom' or 'useActionState'
+import { useState } from 'react'
+import { useActionState } from 'react'             // <-- Server Actions Hook
+import { useFormStatus } from 'react-dom'          // <-- Server Actions Hook
 import { Switch } from '@headlessui/react'
+import { submitContactForm } from '@/lib/mail/submitContactForm'
 
 interface ContactFormProps {
     topOfPage?: boolean
@@ -18,56 +30,22 @@ interface ContactFormProps {
 export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) {
     const [agreed, setAgreed] = useState(false)
 
-    // 1. Local state for form submission
-    const [pending, setPending] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [errors, setErrors] = useState<Record<string, string[]>>({})
+    // 1) Set up the server action state for your submitContactForm
+    //    Defaulting to { success: false, errors: {} }
+    const [state, formAction] = useActionState(submitContactForm, {
+        success: false,
+        errors: {},
+    })
 
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-
-        // Reset states before sending
-        setPending(true)
-        setSuccess(false)
-        setErrors({})
-
-        // 2. Gather FormData from the <form>
-        const formData = new FormData(e.currentTarget)
-
-        try {
-            // 3. Make a POST request to /contact
-            const response = await fetch('/contact', {
-                method: 'POST',
-                body: formData,
-            })
-
-            // 4. Parse JSON response { success: boolean, errors?: {}, ... }
-            const data = await response.json()
-
-            // If the server returned an error status
-            if (!response.ok) {
-                console.error('Server returned an error:', data)
-                // Attempt to set field-level errors
-                if (data.errors) {
-                    setErrors(data.errors)
-                }
-            } else {
-                // Check if success
-                if (data.success) {
-                    setSuccess(true)
-                } else if (data.errors) {
-                    setErrors(data.errors)
-                }
-            }
-        } catch (err) {
-            console.error('Network or unexpected error:', err)
-        } finally {
-            setPending(false)
-        }
-    }
+    // 2) Hook from 'react-dom' to track if the action is pending
+    const { pending } = useFormStatus()
 
     return (
-        <div className={`isolate ${topOfPage ? 'px-6 py-24 sm:py-32 lg:px-8' : ''}`}>
+        <div
+            className={`isolate ${
+                topOfPage ? 'px-6 py-24 sm:py-32 lg:px-8' : ''
+            }`}
+        >
             {showTitle && (
                 <div className="mx-auto max-w-2xl text-center">
                     <h2
@@ -86,11 +64,11 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
             )}
 
             {/*
-        5. Change `<form action={formAction} ...>`
-        to `<form onSubmit={handleSubmit} ...>`
+        3) Use the "action" prop on the <form> to tie into the server action
+        instead of an onSubmit handler.
       */}
             <form
-                onSubmit={handleSubmit}
+                action={formAction}
                 className={`mx-auto ${
                     showTitle ? 'mt-16 sm:mt-20' : ''
                 } max-w-xl`}
@@ -114,10 +92,9 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
                                 className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
                             />
                         </div>
-                        {/* Field error display */}
-                        {errors?.firstName && (
+                        {state.errors?.firstName && (
                             <p className="mt-2 text-sm text-red-500">
-                                {errors.firstName[0]}
+                                {state.errors.firstName[0]}
                             </p>
                         )}
                     </div>
@@ -139,10 +116,9 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
                                 className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
                             />
                         </div>
-                        {/* Field error display */}
-                        {errors?.lastName && (
+                        {state.errors?.lastName && (
                             <p className="mt-2 text-sm text-red-500">
-                                {errors.lastName[0]}
+                                {state.errors.lastName[0]}
                             </p>
                         )}
                     </div>
@@ -184,9 +160,10 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
                                 className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
                             />
                         </div>
-                        {/* Field error display */}
-                        {errors?.email && (
-                            <p className="mt-2 text-sm text-red-500">{errors.email[0]}</p>
+                        {state.errors?.email && (
+                            <p className="mt-2 text-sm text-red-500">
+                                {state.errors.email[0]}
+                            </p>
                         )}
                     </div>
 
@@ -207,9 +184,10 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
                   className="block w-full rounded-md bg-gray-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-white/5 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#32b7b6] transition-all duration-300 ease-in-out"
               />
                         </div>
-                        {/* Field error display */}
-                        {errors?.message && (
-                            <p className="mt-2 text-sm text-red-500">{errors.message[0]}</p>
+                        {state.errors?.message && (
+                            <p className="mt-2 text-sm text-red-500">
+                                {state.errors.message[0]}
+                            </p>
                         )}
                     </div>
 
@@ -260,7 +238,8 @@ export default function ContactForm({ topOfPage, showTitle }: ContactFormProps) 
                     </button>
                 </div>
 
-                {success && (
+                {/* Check if state.success is true */}
+                {state.success && (
                     <p className="mt-4 text-sm text-green-500 text-center">
                         Thank you for your message. We&apos;ll be in touch soon!
                     </p>
