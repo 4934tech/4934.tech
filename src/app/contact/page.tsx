@@ -4,6 +4,8 @@ export default function Contact() {
     return (
         <>
                 <ContactForm
+                    topOfPage={true}
+                    showTitle={true}
                 />
         </>
     );
