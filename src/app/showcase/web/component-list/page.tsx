@@ -66,7 +66,6 @@ export default function WebComponentListShowcase() {
                     />
                     <UnifiedSection title={"Contact Section"} description={"A contact form you can use to talk to us!"} topOfPage={false} />
                     <ContactForm
-                        showTitle={false}
                     />
                     <UnifiedSection title={"Email Signup"} description={"A cool looking newsletter form! Doesn't work yet though. But it still looks cool!"} topOfPage={false} rightAligned={true}/>
                     <EmailSignup
