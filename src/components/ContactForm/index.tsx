@@ -156,7 +156,7 @@ const ContactForm: FC<ContactFormProps> = ({ topOfPage = false, showTitle = fals
                         </div>
                         <Label className="text-sm/6 text-gray-400">
                             By selecting this, you agree to our{' '}
-                            <a href="https://4934.tech/policies/privacy-policy"
+                            <a href="https://4934.tech/policies/privacy"
                                className="text-transparent bg-gradient-to-r from-[#32b7b6] to-[#1d243c] bg-clip-text transition-colors">
                                 privacy&nbsp;policy
                             </a>
